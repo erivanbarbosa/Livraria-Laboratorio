@@ -3,11 +3,29 @@
 #header-div{
     font-size: 15px;
     padding: 15 0;
-    margin-bottom: 50px;
-    
-    
-   
-		   "
+    margin-bottom: 50px; "
+	
+}
+
+.texto{
+	
+	left:500;
+	float: right;
+	
+	
+}
+#logo{
+	
+	position:absolute;
+	top: 20px;
+	width: 150px;
+	height: 100px;
+}
+.botao{
+	max-width: 10px;
+	max-height: 10px;
+	width: auto;
+	height: auto;
 	
 }
 .menu-opcoes ul li{
@@ -15,13 +33,6 @@
 	 margin-right: 5px;
 	 margin-left: 2px;
 	 padding-right: 5px;
-	 
-	 
-	 
-	 
-	 
-	 
-	
 }
 .menu-opcoes {
 	position: absolute;
