@@ -2,8 +2,8 @@
 
 #header-div{
 	 border-width:2px; 
-	 border-color:green; 
-	 border-style:solid;"
+	 position: relative;"
+	 display:inline;
 }
 
 #conteudo-div{
