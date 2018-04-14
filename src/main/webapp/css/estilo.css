@@ -1,41 +1,44 @@
 @charset "UTF-8";
 
-#header-div{
-    font-size: 15px;
-    padding: 15 0;
-    margin-bottom: 50px;
-    
-    
-   
-		   "
-	
+#header-div {
+	font-size: 15px;
+	padding: 15 0;
+	margin-bottom: 50px;
+	"
 }
-.menu-opcoes ul li{
-	 display: inline;
-	 margin-right: 5px;
-	 margin-left: 2px;
-	 padding-right: 5px;
-	 
-	 
-	 
-	 
-	 
-	 
-	
+
+.menu-opcoes ul li {
+	display: inline;
+	margin-right: 5px;
+	margin-left: 2px;
+	padding-right: 5px;
 }
+
 .menu-opcoes {
 	position: absolute;
 	right: 20px;
 }
 
-#conteudo-div{
-	 border-width:2px; 
-	 border-color:green; 
-	 border-style:solid;"
+#conteudo-div {
+	border-width: 2px;
+	border-color: green;
+	border-style: solid;
+	"
 }
 
-#footer-div{
-	 border-width:2px; 
-	 border-color:green; 
-	 border-style:solid;"
+#footer-div {
+	background:#2f5f8f;
+	height:30px;
+    width:100%;
+}
+
+.faleconosco-div{
+	width: 20%;
+}
+.quemsomos-div{
+	width: 30%;	
+}
+
+.quemsomos-div p{
+	display: inline;
 }
