@@ -1,17 +1,55 @@
 @charset "UTF-8";
 
+<<<<<<< HEAD
 #header-div {
 	font-size: 15px;
 	padding: 15 0;
 	margin-bottom: 50px;
 	"
+=======
+#header-div{
+    font-size: 15px;
+    padding: 15 0;
+    margin-bottom: 50px; "
+	
 }
+
+.texto{
+	
+	left:500;
+	float: right;
+	
+	
+}
+#logo{
+	
+	position:absolute;
+	top: 20px;
+	width: 150px;
+	height: 100px;
+}
+.botao{
+	max-width: 10px;
+	max-height: 10px;
+	width: auto;
+	height: auto;
+	
+>>>>>>> branch 'master' of https://github.com/erivanbarbosa/Livraria-Laboratorio
+}
+<<<<<<< HEAD
 
 .menu-opcoes ul li {
 	display: inline;
 	margin-right: 5px;
 	margin-left: 2px;
 	padding-right: 5px;
+=======
+.menu-opcoes ul li{
+	 display: inline;
+	 margin-right: 5px;
+	 margin-left: 2px;
+	 padding-right: 5px;
+>>>>>>> branch 'master' of https://github.com/erivanbarbosa/Livraria-Laboratorio
 }
 
 .menu-opcoes {
