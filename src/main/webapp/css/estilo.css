@@ -1,12 +1,17 @@
 @charset "UTF-8";
 
-<<<<<<< HEAD
+* {
+	font: 300 15px/1.7 'Open Sans', sans-serif;
+	
+}
+
+
 #header-div {
 	font-size: 15px;
 	padding: 15 0;
 	margin-bottom: 50px;
-	"
-=======
+}
+
 #header-div{
     font-size: 15px;
     padding: 15 0;
@@ -33,23 +38,20 @@
 	max-height: 10px;
 	width: auto;
 	height: auto;
-	
->>>>>>> branch 'master' of https://github.com/erivanbarbosa/Livraria-Laboratorio
 }
-<<<<<<< HEAD
 
 .menu-opcoes ul li {
 	display: inline;
 	margin-right: 5px;
 	margin-left: 2px;
 	padding-right: 5px;
-=======
+}
+
 .menu-opcoes ul li{
 	 display: inline;
 	 margin-right: 5px;
 	 margin-left: 2px;
 	 padding-right: 5px;
->>>>>>> branch 'master' of https://github.com/erivanbarbosa/Livraria-Laboratorio
 }
 
 .menu-opcoes {
@@ -61,22 +63,59 @@
 	border-width: 2px;
 	border-color: green;
 	border-style: solid;
-	"
 }
 
 #footer-div {
 	background:#2f5f8f;
-	height:30px;
     width:100%;
+    overflow: auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    
 }
+
+.faleconosco-div, .quemsomos-div, .social-div {
+	margin: 10px;
+}
+
 
 .faleconosco-div{
 	width: 20%;
-}
-.quemsomos-div{
-	width: 30%;	
+	float:left;
 }
 
-.quemsomos-div p{
-	display: inline;
+
+#footer-div div p {
+	margin: 0;
+}
+
+#copyright {
+	clear: both;
+	text-align: center;
+	padding-top: 20px;
+	font-style: italic;
+}
+
+.quemsomos-div{
+	width: 30%;	
+	float: left;
+}
+
+.social-div{
+	width: 40%;
+	float:left;
+}
+
+.social-div p{
+	text-align: right;
+}
+
+.social-div a{
+	float:right;
+}
+
+.social-div img{
+	width: 32px;
+	height: 32px;
+	margin: 10px;
 }
