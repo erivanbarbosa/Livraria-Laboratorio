@@ -43,6 +43,31 @@ public class LivroDao {
 		return lista;		
 	}
 	
+public int excluir(Livro livro){
+		
+		String excluirPorId = "DELETE FROM livro WHERE cod_livro = ?";
+		
+		int id = livro.getIdLivro();
+		int resultado= 0;
+		
+		if(livro.getIdLivro() != 0) {
+			try {
+				Connection conexao = FabricaConexao.getConexao();
+				PreparedStatement consulta = conexao.prepareStatement(excluirPorId);
+				
+				consulta.setInt(1, id);
+				resultado = consulta.executeUpdate();
+				
+			}
+				catch (SQLException e) {
+					e.printStackTrace();
+				}
+		} else {
+			System.out.println("Algo deu errado!");
+		}
+		
+		return resultado;
+	}
 	
 	
 

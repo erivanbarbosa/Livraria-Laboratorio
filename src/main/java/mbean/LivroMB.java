@@ -4,6 +4,7 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
 
 import modelo.Livro;
+import servico.LivroServico;
 
 @ViewScoped
 @ManagedBean
@@ -11,6 +12,7 @@ public class LivroMB {
 
 	private Livro livro;
 	private int idLivro;
+	private LivroServico servico;
 	
 
 	public int getIdLivro() {
@@ -25,6 +27,9 @@ public class LivroMB {
 		//System.out.println(idLivro);
 		livro = new Livro();
 		livro.setIdLivro(idLivro);
+		servico = new LivroServico();
+		servico.excluir(livro);
+		
 		return "exemplo.xhtml";
 	}
 
