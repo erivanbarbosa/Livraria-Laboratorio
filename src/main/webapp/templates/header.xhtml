@@ -8,12 +8,13 @@
 
 <body>
 	<ui:composition>
-		<header> <!--  <div class="header-main">-->
-		<div class="logotipo">
-			<h:graphicImage value="/imagens/logo-livraria.png" id="logo" />
-		</div>
+		<header> <!--  <div class="header-main">--> 
+		<h:panelGrid columns="5" styleClass="header-panel-grid-class">
 
-		<h:panelGrid columns="3">
+			<div class="logotipo">
+				<h:graphicImage value="/imagens/logo-livraria.png" id="logo" />
+			</div>
+
 			<nav class="menu-opcoes">
 			<ul>
 				<li><a href="#">Livros</a></li>

@@ -1,47 +1,45 @@
 @charset "UTF-8";
 
 * {
-	font: 300 15px/1.7 'Open Sans', sans-serif;
-	
+	font: 300 15px/1.7 Arial, Helvetica, sans-serif;
 }
-
 
 #header-div {
 	font-size: 15px;
 	padding: 15 0;
-	margin-bottom: 50px;
+	margin-bottom: 10px;
 }
 
 .logotipo {
 	float: left;
-	display:block;
+	display: block;
 }
 
 .buscar-produtos {
 	float: right;
 }
 
-
-.buscar-produtos form{
+.buscar-produtos form {
 	float: right;
 }
 
-.menu-opcoes{
-	    clear: both;
+.menu-opcoes {
+	clear: both;
 }
 
 .texto {
-/* 	float: left;
- */	height: 31px;
+	/* 	float: left;
+ */
+	height: 31px;
 	width: 400px;
-} 
-
-
-#logo{
-	width: 150px;
-	height: 100px;
 }
-.botao{
+
+#logo {
+	width: 120px;
+	height: 80px;
+}
+
+.botao {
 	max-width: 10px;
 	max-height: 10px;
 	width: auto;
@@ -55,45 +53,56 @@
 	padding-right: 5px;
 }
 
-.menu-opcoes ul li{
-	 display: inline;
-	 margin-right: 5px;
-	 margin-left: 2px;
-	 padding-right: 5px;
+.menu-opcoes ul {
+	padding-right: 80px;
+	margin-bottom: 0;
+	padding-left: 0;
 }
 
+.menu-opcoes ul li {
+	display: inline;
+	margin-right: 5px;
+	margin-left: 2px;
+	padding-right: 5px;
+}
+
+.menu-opcoes ul li a {
+	color: black;
+	font-size: 1.2em;
+	text-decoration: none;
+}
+
+.header-panel-grid-class td {
+	vertical-align: bottom;
+}
 
 #conteudo-div {
-	border-width: 2px;
-	border-color: green;
-	border-style: solid;
+	/* 	background-image: url("http://inspyre.club/wp-content/uploads/2016/10/Livraria.jpg");
+ */
+	
 }
 
 #footer-div {
-	background:#2f5f8f;
-    width:100%;
-    overflow: auto;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    
-    color: white;
+	background: #2f5f8f;
+	width: 100%;
+	overflow: auto;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	color: white;
 }
 
-
 #footer-div a {
-    color: white;
+	color: white;
 }
 
 .faleconosco-div, .quemsomos-div, .social-div {
 	margin: 10px;
 }
 
-
-.faleconosco-div{
+.faleconosco-div {
 	width: 20%;
-	float:left;
+	float: left;
 }
-
 
 #footer-div div p {
 	margin: 0;
@@ -106,26 +115,27 @@
 	font-style: italic;
 }
 
-.quemsomos-div{
-	width: 30%;	
+.quemsomos-div {
+	width: 30%;
 	float: left;
 }
 
-.social-div{
+.social-div {
 	width: 40%;
-	float:left;
+	float: left;
 }
 
-.social-div p{
+.social-div p {
 	text-align: right;
 }
 
-.social-div a{
-	float:right;
+.social-div a {
+	float: right;
 }
 
-.social-div img{
+.social-div img {
 	width: 32px;
 	height: 32px;
 	margin: 10px;
 }
+.
