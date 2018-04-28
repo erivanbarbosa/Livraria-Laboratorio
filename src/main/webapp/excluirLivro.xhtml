@@ -9,12 +9,12 @@
 	<ui:composition>
 		<h1>exclusão de livro</h1>
 
-		<h:panelGrid id="paniel-excluir" columns="2">
-			<form id="form_busca">
+		<h:panelGrid id="paninel-excluir" columns="2">
+			<h:form>
 				<a>ID: </a>
 				<h:inputText value="#{livroMB.idLivro}" />
-				<h:commandButton value="Excluir Livro" action="#{livroMB.excluir()}"/>
-			</form>
+				<h:commandButton value="Excluir Livro" action="#{livroMB.excluir}"/>
+			</h:form>
 		</h:panelGrid>
 
 
