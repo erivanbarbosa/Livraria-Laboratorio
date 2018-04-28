@@ -12,24 +12,32 @@
 	margin-bottom: 50px;
 }
 
-#header-div{
-    font-size: 15px;
-    padding: 15 0;
-    margin-bottom: 50px; "
-	
+.logotipo {
+	float: left;
+	display:block;
 }
 
-.texto{
-	
-	left:500;
+.buscar-produtos {
 	float: right;
-	
-	
 }
+
+
+.buscar-produtos form{
+	float: right;
+}
+
+.menu-opcoes{
+	    clear: both;
+}
+
+.texto {
+/* 	float: left;
+ */	height: 31px;
+	width: 400px;
+} 
+
+
 #logo{
-	
-	position:absolute;
-	top: 20px;
 	width: 150px;
 	height: 100px;
 }
@@ -54,10 +62,6 @@
 	 padding-right: 5px;
 }
 
-.menu-opcoes {
-	position: absolute;
-	right: 20px;
-}
 
 #conteudo-div {
 	border-width: 2px;
@@ -72,6 +76,12 @@
     padding-top: 10px;
     padding-bottom: 10px;
     
+    color: white;
+}
+
+
+#footer-div a {
+    color: white;
 }
 
 .faleconosco-div, .quemsomos-div, .social-div {
