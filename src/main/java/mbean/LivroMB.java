@@ -11,6 +11,7 @@ public class LivroMB {
 
 	private Livro livro;
 	private int idLivro;
+	private String titulo;
 	
 
 	public int getIdLivro() {
@@ -20,6 +21,10 @@ public class LivroMB {
 	public void setIdLivro(int idLivro) {
 		this.idLivro = idLivro;
 	}
+
+	public void setTitulo(String titulo) {
+		this.titulo = titulo;
+	}
 	
 	public String excluir() {
 		//System.out.println(idLivro);
@@ -28,4 +33,9 @@ public class LivroMB {
 		return "exemplo.xhtml";
 	}
 
+	public String pesquisar() {
+		livro = new Livro();
+		livro.setTitulo(titulo);
+		return "pesquisa.xhtml";
+	}
 }
