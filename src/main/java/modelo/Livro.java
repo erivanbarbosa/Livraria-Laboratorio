@@ -1,19 +1,19 @@
 package modelo;
 
 public class Livro {
-	private int codLivro;
+	private int idLivro;
 	private String titulo;
 	private String autor;
 	private double preco;
 	private String imagem;
 	private String descricao;
 
-	public int getCodLivro() {
-		return codLivro;
+	public int getIdLivro() {
+		return idLivro;
 	}
 
-	public void setCodLivro(int codLivro) {
-		this.codLivro = codLivro;
+	public void setIdLivro(int idLivro) {
+		this.idLivro = idLivro;
 	}
 
 	public String getTitulo() {
