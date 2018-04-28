@@ -9,6 +9,7 @@ import modelo.Livro;
 @ManagedBean
 public class LivroMB {
 
+	private Livro livro;
 	private int idLivro;
 	
 
@@ -20,9 +21,11 @@ public class LivroMB {
 		this.idLivro = idLivro;
 	}
 	
-	public void excluir() {
-		System.out.println(idLivro);
-		
+	public String excluir() {
+		//System.out.println(idLivro);
+		livro = new Livro();
+		livro.setIdLivro(idLivro);
+		return "exemplo.xhtml";
 	}
 
 }
