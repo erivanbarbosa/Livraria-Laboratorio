@@ -27,7 +27,7 @@ public class LivroDao {
 			
 			while (resultado.next()) {
 				livro = new Livro();
-				livro.setCodLivro(resultado.getInt("COD_LIVRO"));
+				livro.setIdLivro(resultado.getInt("COD_LIVRO"));
 				livro.setTitulo(resultado.getString("TITULO"));
 				livro.setAutor(resultado.getString("AUTOR"));
 				livro.setDescricao(resultado.getString("DESCRICAO"));
