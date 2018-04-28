@@ -13,6 +13,7 @@ public class LivroMB {
 	private Livro livro;
 	private int idLivro;
 	private LivroServico servico;
+	private String titulo;
 	
 
 	public int getIdLivro() {
