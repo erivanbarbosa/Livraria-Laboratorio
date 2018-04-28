@@ -20,9 +20,9 @@ public class LivroMB {
 		this.idLivro = idLivro;
 	}
 	
-	public void excluir() {
-		System.out.println(idLivro);
-		
+	public String excluir() {
+		//System.out.println(idLivro);
+		return "exemplo.xhtml";
 	}
 
 }
