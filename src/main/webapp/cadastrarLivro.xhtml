@@ -1,0 +1,42 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<h:body>
+	<ui:composition template="templates/principal.xhtml">
+		<ui:define name="conteudo">
+
+			<h:form>
+				<center>
+					<h1>Cadastrar Livro</h1>
+					<table columns = "1">
+						<h:panelGrid id="painel-excluir" columns="2">
+							<a>Título: </a>
+							<h:inputText value="#{livroMB.idLivro}" />
+							<a>Autor: </a>
+							<h:inputText value="#{livroMB.idLivro}" />
+							<a>Preço: </a>
+							<h:inputText value="#{livroMB.idLivro}" />
+							<a>Imagem: </a>
+							<h:inputText value="#{livroMB.idLivro}" />
+							<a>Descrição: </a>
+							<h:inputText value="#{livroMB.idLivro}" />
+							<a></a>
+							<h:commandButton value="Cadastrar Livro"
+								action="#{livroMB.excluir}" />
+						</h:panelGrid>
+					</table>
+				</center>
+
+			</h:form>
+
+
+		</ui:define>
+	</ui:composition>
+
+</h:body>
+</html>
