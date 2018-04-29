@@ -15,9 +15,6 @@ public class LivroMB {
 	private LivroServico servico;
 	private String titulo;
 	
-	
-	
-
 	public String getTitulo() {
 		return titulo;
 	}
