@@ -9,6 +9,13 @@ public class LivroServico {
 
 	private LivroDao dao;
 
+	public Livro inserir(Livro livro) {
+
+		dao = new LivroDao();
+		return dao.inserir(livro);
+
+	}
+	
 	public int excluir(Livro livro) {
 
 		dao = new LivroDao();
