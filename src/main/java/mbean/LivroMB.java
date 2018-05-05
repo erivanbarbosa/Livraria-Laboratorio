@@ -15,6 +15,9 @@ public class LivroMB {
 	private double preco;
 	private String imagem;
 	private String descricao;
+	private LivroServico servico;
+	private String titulo;
+	private int idLivro;
 
 	public Livro getLivro() {
 		return livro;
@@ -103,7 +106,7 @@ public class LivroMB {
 
 		return "exemplo.xhtml";
 	}
-	
+
 	private void resetar() {
 		livro = null;
 		idLivro = 0;
