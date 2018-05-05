@@ -30,8 +30,8 @@
 
 			<div class="buscar-produtos">
 				<h:form id="form_busca">
-					<h:inputText class="texto" />
-					<h:commandButton value="" image="/imagens/busca.png" />
+					<h:inputText class="texto" value= "#{livroMB.titulo}"/>
+					<h:commandButton value="" image="/imagens/busca.png" action= "#{livroMB.pesquisar}"/>
 				</h:form>
 			</div>
 

@@ -10,14 +10,13 @@
 	<ui:composition template="templates/principal.xhtml">
 		<ui:define name="conteudo">
 
-			<h:form>
-				<h1>Resultado da Pesquisa</h1>
-				<h:panelGrid id="painel-pesquisar" columns="2">
-					<a>Titulo: </a>
-					<h:inputText value="#{livroMB.titulo}" />
-					<h:commandButton value="Pesquisar Livro" action="#{livroMB.pesquisar}" />
-				</h:panelGrid>
-			</h:form>
+			<h:dataTable value="#{LivroMB.pesquisar}" var="livro">
+		<h:column> 
+		Titulo: #{livro.titulo}
+		Autor: #{livro.autor}
+		Preco: #{livro.preco}
+		 </h:column>
+		 </h:dataTable>
 
 		</ui:define>
 	</ui:composition>
