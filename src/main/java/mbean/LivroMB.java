@@ -18,7 +18,7 @@ public class LivroMB {
 	private double preco;
 	private String imagem;
 	private String descricao;
-	//teste
+	
 
 	
 	
