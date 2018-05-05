@@ -20,10 +20,6 @@ public class LivroMB {
 	private String descricao;
 	
 
-	
-	
-	
-
 	public Livro getLivro() {
 		return livro;
 	}
