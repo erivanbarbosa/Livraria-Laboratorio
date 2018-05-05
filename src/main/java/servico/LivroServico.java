@@ -12,7 +12,7 @@ public class LivroServico {
 	public int inserir(Livro livro) {
 
 		//dao = new LivroDao();
-		//return dao.inserir(livro);
+		//return dao.inserir(livro);oi
 		
 		if (livro.getTitulo() != null && livro.getDescricao() != null && livro.getPreco() != 0 && livro.getAutor() != null && livro.getImagem() != null) {
 			
