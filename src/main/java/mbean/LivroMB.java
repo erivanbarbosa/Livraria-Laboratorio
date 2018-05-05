@@ -1,26 +1,20 @@
 package mbean;
 
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.ViewScoped;
+import javax.faces.bean.SessionScoped;
 
 import modelo.Livro;
 import servico.LivroServico;
 
-@ViewScoped
+@SessionScoped
 @ManagedBean
 public class LivroMB {
 
 	private Livro livro;
-	private int idLivro;
-	private LivroServico servico;
-	private String titulo;
 	private String autor;
 	private double preco;
 	private String imagem;
 	private String descricao;
-	
-	
-	
 
 	public Livro getLivro() {
 		return livro;
@@ -85,15 +79,35 @@ public class LivroMB {
 	public void setIdLivro(int idLivro) {
 		this.idLivro = idLivro;
 	}
-	
+
+	public String pesquisar() {
+
+		System.out.println("pesquisar");
+		livro = new Livro();
+		livro.setTitulo(titulo);
+		servico = new LivroServico();
+		servico.perquisar(livro);
+		resetar();
+
+		return "pesquisa.xhtml";
+
+	}
+
 	public String excluir() {
-		//System.out.println(idLivro);
+
 		livro = new Livro();
 		livro.setIdLivro(idLivro);
 		servico = new LivroServico();
 		servico.excluir(livro);
-		
+		resetar();
+
 		return "exemplo.xhtml";
+	}
+	
+	private void resetar() {
+		livro = null;
+		idLivro = 0;
+		titulo = null;
 	}
 
 }
