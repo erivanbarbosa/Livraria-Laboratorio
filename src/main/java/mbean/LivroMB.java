@@ -106,6 +106,19 @@ public class LivroMB {
 
 		return "exemplo.xhtml";
 	}
+	
+	public String adicionar() {
+		livro = new Livro();
+		livro.setDescricao(getDescricao());
+		livro.setAutor(getAutor());
+		livro.setImagem(getImagem());
+		livro.setPreco(getPreco());
+		livro.setTitulo(getTitulo());
+		servico = new LivroServico();
+		servico.inserir(livro);
+		
+		return "cadastrado.xhtml";
+	}
 
 	private void resetar() {
 		livro = null;
