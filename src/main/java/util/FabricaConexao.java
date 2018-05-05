@@ -10,7 +10,11 @@ public class FabricaConexao {
 	static final String senha = "123456";
 	
 	public static Connection getConexao() throws SQLException {
+		try {
+			Class.forName("org.postgresql.Driver");
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
 		return DriverManager.getConnection(url, usuario, senha);
 	}
-
 }
