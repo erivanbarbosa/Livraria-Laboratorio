@@ -3,6 +3,7 @@ package util;
 import java.sql.Connection;
 import java.sql.SQLException;
 
+//Subindo Teste
 public class TestaConexao {
 	
 		public static void main(String[] args) {
