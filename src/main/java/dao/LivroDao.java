@@ -11,7 +11,7 @@ import util.FabricaConexao;
 
 public class LivroDao {
 	
-	public ArrayList<Livro> pesquisar(String titulo){
+	public ArrayList<Livro> pesquisar(Livro livro_pesquisa){
 		
 		String pesquisaPorNome = "SELECT TITULO, COD_LIVRO, AUTOR, PRECO, IMAGEM, DESCRICAO FROM LIVRO WHERE TITULO LIKE ?";
 		Livro livro = null;
@@ -22,7 +22,7 @@ public class LivroDao {
 			Connection conexao = FabricaConexao.getConexao();
 			PreparedStatement consulta = conexao.prepareStatement(pesquisaPorNome);
 			
-			consulta.setString(1, titulo.toUpperCase());
+			consulta.setString(1, livro_pesquisa.getTitulo().toUpperCase());
 			ResultSet resultado = consulta.executeQuery();
 			
 			while (resultado.next()) {

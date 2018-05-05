@@ -1,5 +1,7 @@
 package mbean;
 
+import java.util.ArrayList;
+
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
@@ -15,6 +17,10 @@ public class LivroMB {
 	private double preco;
 	private String imagem;
 	private String descricao;
+	private LivroServico servico;
+	private String titulo;
+	private int idLivro;
+	private ArrayList<Livro> livros;
 
 	public Livro getLivro() {
 		return livro;
@@ -79,15 +85,23 @@ public class LivroMB {
 	public void setIdLivro(int idLivro) {
 		this.idLivro = idLivro;
 	}
+	
+	
+
+	public ArrayList<Livro> getLivros() {
+		return livros;
+	}
+
+	public void setLivros(ArrayList<Livro> livros) {
+		this.livros = livros;
+	}
 
 	public String pesquisar() {
 
-		System.out.println("pesquisar");
 		livro = new Livro();
 		livro.setTitulo(titulo);
 		servico = new LivroServico();
-		servico.perquisar(livro);
-		resetar();
+		livros = servico.perquisar(livro);
 
 		return "pesquisa.xhtml";
 
@@ -103,7 +117,7 @@ public class LivroMB {
 
 		return "exemplo.xhtml";
 	}
-	
+
 	private void resetar() {
 		livro = null;
 		idLivro = 0;
