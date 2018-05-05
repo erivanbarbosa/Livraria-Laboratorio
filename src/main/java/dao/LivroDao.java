@@ -68,6 +68,25 @@ public int excluir(Livro livro){
 		
 		return resultado;
 	}
+
+  public void inserirLivro(Livro livro) {
+	  String sql="INSERT livro INTO (titulo,autor,preco,imagem,descricao) VALUES (?,?,?,?,?)";
+	  try {
+		  Connection conn = FabricaConexao.getConexao();
+		  PreparedStatement ps = conn.prepareStatement(sql);
+		  ps.setString(1, livro.getTitulo());
+		  ps.setString(2, livro.getAutor());
+		  ps.setDouble(3, livro.getPreco());
+		  ps.setString(4,livro.getImagem() );
+		  ps.setString(5,livro.getDescricao());
+		  ps.execute();
+		  System.out.println("Dados inseridos com suscesso!");
+		  
+	  }catch(SQLException e) {
+		  System.out.println(e);
+	  }
+	  
+  }
 	
 	
 
