@@ -116,7 +116,7 @@ public class LivroMB {
 		livro.setTitulo(getTitulo());
 		servico = new LivroServico();
 		servico.inserir(livro);
-		
+		resetar();
 		return "cadastrado.xhtml";
 	}
 
@@ -124,6 +124,10 @@ public class LivroMB {
 		livro = null;
 		idLivro = 0;
 		titulo = null;
+		autor=null;
+		imagem=null;
+		descricao=null;
+		preco=0;
 	}
 
 }
