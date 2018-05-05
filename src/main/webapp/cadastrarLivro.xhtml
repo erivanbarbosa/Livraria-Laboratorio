@@ -16,18 +16,18 @@
 					<table columns = "1">
 						<h:panelGrid id="painel-excluir" columns="2">
 							<a>Título: </a>
-							<h:inputText value="#{livroMB.idLivro}" />
+							<h:inputText value="#{livroMB.titulo}" />
 							<a>Autor: </a>
-							<h:inputText value="#{livroMB.idLivro}" />
+							<h:inputText value="#{livroMB.autor}" />
 							<a>Preço: </a>
-							<h:inputText value="#{livroMB.idLivro}" />
+							<h:inputText value="#{livroMB.preco}" />
 							<a>Imagem: </a>
-							<h:inputText value="#{livroMB.idLivro}" />
+							<h:inputText value="#{livroMB.imagem}" />
 							<a>Descrição: </a>
-							<h:inputText value="#{livroMB.idLivro}" />
+							<h:inputText value="#{livroMB.descricao}" />
 							<a></a>
 							<h:commandButton value="Cadastrar Livro"
-								action="#{livroMB.excluir}" />
+								action="#{livroMB.inserir}" />
 						</h:panelGrid>
 					</table>
 				</center>
