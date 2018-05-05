@@ -22,7 +22,7 @@ public class LivroDao {
 			Connection conexao = FabricaConexao.getConexao();
 			PreparedStatement consulta = conexao.prepareStatement(pesquisaPorNome);
 			
-			consulta.setString(1, livro_pesquisa.getTitulo().toUpperCase());
+			consulta.setString(1, "%" + livro_pesquisa.getTitulo().toUpperCase() + "%");
 			ResultSet resultado = consulta.executeQuery();
 			
 			while (resultado.next()) {

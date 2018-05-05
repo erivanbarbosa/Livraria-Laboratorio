@@ -9,24 +9,20 @@
 <h:body>
 	<ui:composition template="templates/principal.xhtml">
 		<ui:define name="conteudo">
-		
-		<h:dataTable value="#{livroMB.livros}" var="livro">
-				<h:column> 
- 		Titulo: #{livro.titulo}
- 		
-		 </h:column>
-		 		<h:column> 
- 		Autor: #{livro.autor}
- 		
-		 </h:column>
-		 		<h:column> 
- 		Titulo: #{livro.titulo}
- 		
-		 </h:column>
-		 		<h:column> 
- 		Titulo: #{livro.titulo}
- 		
-		 </h:column>
+
+			<h:dataTable value="#{livroMB.livros}" var="livro">
+				<h:column>		
+ 		Titulo: <h:outputText value="#{livro.titulo}" />
+					<br></br>
+					
+		Autor: <h:outputText value="#{livro.autor}" />
+					<br></br>
+		Preço:  <h:outputText value="#{livro.preco}" />
+		<br></br>
+		<br></br>
+		<hr></hr>
+				</h:column>
+
 			</h:dataTable>
 
 		</ui:define>
