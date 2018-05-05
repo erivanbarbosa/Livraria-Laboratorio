@@ -21,16 +21,17 @@
 				<li><a href="#">Categorias</a></li>
 				<li><a href="#">Lançamentos</a></li>
 				<li><a href="#">Mais vendidos</a></li>
-				<li><a href="#">Recomendados</a></li>
 				<li><a href="#">Comprar</a></li>
+				<li><a href="cadastrarLivro.xhtml">Administracao</a></li>
+				
 			</ul>
 			</nav>
 
 
 			<div class="buscar-produtos">
 				<h:form id="form_busca">
-					<h:inputText class="texto" />
-					<h:commandButton value="" image="/imagens/busca.png" />
+					<h:inputText class="texto" value= "#{livroMB.titulo}"/>
+					<h:commandButton value="" image="/imagens/busca.png" action= "#{livroMB.pesquisar}"/>
 				</h:form>
 			</div>
 

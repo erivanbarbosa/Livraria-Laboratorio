@@ -22,7 +22,7 @@ public class LivroDao {
 			Connection conexao = FabricaConexao.getConexao();
 			PreparedStatement consulta = conexao.prepareStatement(pesquisaPorNome);
 			
-			consulta.setString(1, "%" + titulo.toUpperCase()+"%");
+			consulta.setString(1, titulo.toUpperCase());
 			ResultSet resultado = consulta.executeQuery();
 			
 			while (resultado.next()) {
@@ -70,7 +70,7 @@ public int excluir(Livro livro){
 	}
 
   public int inserir(Livro livro) {
-	  String sql="INSERT livro INTO (titulo,autor,preco,imagem,descricao) VALUES (?,?,?,?,?)";
+	  String sql="INSERT  INTO livro (titulo,autor,preco,imagem,descricao) VALUES (?,?,?,?,?)";
 	  int result=0;
 	  try {
 		  Connection conn = FabricaConexao.getConexao();
