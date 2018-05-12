@@ -17,6 +17,7 @@ public class UsuarioMB {
 	private String senha;
 	private TipoUsuario tipousuario;
 	private UsuarioServico servico;
+	private boolean logado;
 	
 	
 	public int getCod() {
@@ -54,6 +55,14 @@ public class UsuarioMB {
 	}
 	public void setTipousuario(TipoUsuario tipousuario) {
 		this.tipousuario = tipousuario;
+	}
+	
+	public boolean isLogado(){
+		return this.logado;
+	}
+	
+	public void setLogado(boolean logado){
+		this.logado = logado
 	}
 	
 	
