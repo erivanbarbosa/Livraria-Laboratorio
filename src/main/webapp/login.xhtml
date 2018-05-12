@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<h:html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:mj="http://mojarra.dev.java.net/mojarra_ext"
+	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
+<h:head>
+	<title>login</title>
+	<link rel="stylesheet" type="text/css" href="css/estilo.css"></link>
+</h:head>
+<body>
+
+	<h:form class="login" method="post">
+		<h1>Login</h1>
+		<h:inputText class="input" pt:placeholder="Usuario"
+			value="#{usuarioMB.usuario"/>
+		<h:inputSecret class="input" pt:placeholder="Senha"
+			value="#usuarioMB.senha" />
+		<h:commandButton value="Fazer Login."
+			class="btn btn-primary btn-block btn-large"
+			action="#{usuarioMB.login}" />
+
+
+	</h:form>
+
+
+
+
+</body>
+</h:html>
