@@ -13,21 +13,21 @@
 			<h:form>
 				<center>
 					<h1>Cadastrar Livro</h1>
-					<table columns = "1">
+					<table columns="1">
 						<h:panelGrid id="painel-excluir" columns="2">
 							<a>Título: </a>
-							<h:inputText value="#{livroMB.titulo}" />
+							<h:inputText value="#{livroMB.titulo}" required="true" />
 							<a>Autor: </a>
-							<h:inputText value="#{livroMB.autor}" />
+							<h:inputText value="#{livroMB.autor}" required="true" />
 							<a>Preço: </a>
-							<h:inputText value="#{livroMB.preco}" />
+							<h:inputText value="#{livroMB.preco}" required="true" />
 							<a>Imagem: </a>
-							<h:inputText value="#{livroMB.imagem}" />
+							<h:inputText value="#{livroMB.imagem}" required="true" />
 							<a>Descrição: </a>
-							<h:inputText value="#{livroMB.descricao}" />
+							<h:inputText value="#{livroMB.descricao}" required="true" />
 							<a></a>
 							<h:commandButton value="Cadastrar Livro"
-								action="#{livroMB.inserir}" />
+								action="#{livroMB.adicionar()}" />
 
 						</h:panelGrid>
 					</table>
