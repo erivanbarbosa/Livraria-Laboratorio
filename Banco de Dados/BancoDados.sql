@@ -63,4 +63,9 @@ INSERT INTO USUARIO
  VALUES 
  		('admimistrador', 'administrador','rudimarcf@gmail.com', '123456','administrador');
 
+ 		INSERT INTO USUARIO 
+		(USERNAME, NOMEUSUARIO, EMAIL, SENHA, TIPOUSUARIO) 
+ VALUES 
+ 		('admin', 'Douglas','douglaslpolinto@gmail.com', '123456','administrador'); 		
+
 /* FIM TABELA */
