@@ -10,17 +10,45 @@
 	margin-bottom: 10px;
 }
 
+header {
+	position: relative;
+}
+
 .logotipo {
 	float: left;
 	display: block;
 }
 
 .buscar-produtos {
-	float: right;
+	position: absolute;
+    right: 10px;
+    bottom: 0px;
+    min-width: 436px;
 }
 
-.buscar-produtos form {
-	float: right;
+.buscar-produtos form .texto{
+	position: absolute;
+    bottom: 0;
+    right: 35px;
+    height: 28px;
+}
+
+.buscar-produtos form .button-pesquisa{
+	position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+form #input-text-pesquisa{
+	position: absolute;
+    bottom: 0;
+    right: 35px;
+}
+
+#input-button-pesquisa{
+	position: absolute;
+    bottom: 0;
+    right: 0;
 }
 
 .menu-opcoes {
@@ -77,9 +105,11 @@
 }
 
 #conteudo-div {
-	/* 	background-image: url("http://inspyre.club/wp-content/uploads/2016/10/Livraria.jpg");
- */
-	
+	max-width: 100%;
+}
+
+#conteudo-div img{
+    max-width: 100%;
 }
 
 #footer-div {

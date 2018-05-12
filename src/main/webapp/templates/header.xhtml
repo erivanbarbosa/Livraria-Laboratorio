@@ -17,25 +17,28 @@
 
 			<nav class="menu-opcoes">
 			<ul>
-				<li><a href="#">Livros</a></li>
-				<li><a href="#">Categorias</a></li>
-				<li><a href="#">Lançamentos</a></li>
-				<li><a href="#">Mais vendidos</a></li>
-				<li><a href="#">Comprar</a></li>
-				<li><a href="cadastrarLivro.xhtml">Administracao</a></li>
+				<li><a href="#">LIVROS</a></li>
+				<li><a href="#">CATEGORIAS</a></li>
+				<li><a href="#">RECOMENDADOS</a></li>
+				<li><a href="#">LANCAMENTOS</a></li>
+				<!--   <li><a href="cadastrarLivro.xhtml">Administracao</a></li>-->
 				
 			</ul>
 			</nav>
 
 
-			<div class="buscar-produtos">
+			
+
+		</h:panelGrid> <!--</div>--> 
+		<div class="buscar-produtos">
 				<h:form id="form_busca">
 					<h:inputText class="texto" value= "#{livroMB.titulo}"/>
-					<h:commandButton value="" image="/imagens/busca.png" action= "#{livroMB.pesquisar}"/>
+					<h:commandButton class="button-pesquisa" value="" image="/imagens/busca.png" action= "#{livroMB.pesquisar}"/>
 				</h:form>
-			</div>
-
-		</h:panelGrid> <!--</div>--> </header>
+		</div>
+		
+		</header>
+		
 	</ui:composition>
 </body>
 </html>
