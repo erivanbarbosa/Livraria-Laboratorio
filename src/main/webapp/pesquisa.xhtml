@@ -4,19 +4,37 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:ui="http://java.sun.com/jsf/facelets">
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
 
 <h:body>
 	<ui:composition template="templates/principal.xhtml">
 		<ui:define name="conteudo">
 
-			<h:dataTable value="#{LivroMB.pesquisar}" var="livro">
-		<h:column> 
-		Titulo: #{livro.titulo}
-		Autor: #{livro.autor}
-		Preco: #{livro.preco}
-		 </h:column>
-		 </h:dataTable>
+
+		 <h:form> 
+    <p:dataScroller value="#{LivroMB.pesquisar}" var="car" chunkSize="10">
+        <f:facet name="header">
+            Role para baixa para exibição de mais resultados
+        </f:facet>
+ 
+        <h:panelGrid columns="2" style="width:100%" columnClasses="logo,detail">
+            
+            <p:outputPanel>
+                <h:panelGrid columns="2" cellpadding="5">
+                    <h:outputText value="Titulo:" />
+                    <h:outputText value="#{livroMB.titulo}" style="font-weight: bold"/>
+                    <h:outputText value="Autor:" />
+                    <h:outputText value="#{livroMB.autor}" style="font-weight: bold"/>
+                    <h:outputText value="Preço:" />
+                    <h:outputText value="#{livroMB.preco}" style="font-weight: bold"/>
+                </h:panelGrid>
+            </p:outputPanel>
+        </h:panelGrid>
+    </p:dataScroller>
+</h:form>
+
 
 		</ui:define>
 	</ui:composition>

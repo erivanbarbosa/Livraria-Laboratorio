@@ -85,12 +85,11 @@ public class LivroMB {
 
 	public String pesquisar() {
 
-		System.out.println("pesquisar");
 		livro = new Livro();
 		livro.setTitulo(titulo);
 		servico = new LivroServico();
 		servico.perquisar(livro);
-		resetar();
+		
 
 		return "pesquisa.xhtml";
 
