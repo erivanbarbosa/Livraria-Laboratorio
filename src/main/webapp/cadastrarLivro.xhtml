@@ -22,18 +22,19 @@
 						<h:panelGrid id="painel-excluir" columns="2">
 							<a>Título: </a>
 								<p:inputText value="#{livroMB.titulo}" id="titulo" size="30"
-             					   required="true"  requiredMessage="Campo E-mail deve ser preenchido."/>
-             					   					
-             					 <a>Autor: </a>
-								<p:inputText value="#{livroMB.autor}" id="autor" size="30"
-             					   required="true"  requiredMessage="Campo E-mail deve ser preenchido."/>
+             					   required="true"  requiredMessage="Campo titulo deve ser preenchido."/>
+             					   		
+             				<a>Autor</a>
+             				<p:inputText value="#{livroMB.autor}" id="autor" size="30"
+             					   required="true"  requiredMessage="Campo autor deve ser preenchido."/>
+             					   
 								<a>Preço: </a>
 								<p:inputText value="#{livroMB.preco}" id="preco" size="30"
-             					   required="true"  requiredMessage="Campo E-mail deve ser preenchido."/>
+             					   required="true"  requiredMessage="Campo preço deve ser preenchido."/>
              					
 								<a>Descrição: </a>
 								<p:inputText value="#{livroMB.descricao}" id="descricao" size="30"
-             					   required="true"  requiredMessage="Campo E-mail deve ser preenchido."/>
+             					   required="true"  requiredMessage="Campo descrição deve ser preenchido."/>
 								<a>Imagem: </a>
 								<p:fileUpload value="#{livroMB.imagem}" mode="simple" skinSimple="true" label="Escolher"/>
 								<a></a>
