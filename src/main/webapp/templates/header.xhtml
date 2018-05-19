@@ -42,9 +42,12 @@
 					<h:outputLabel>
 						<p:menuButton value="Entrar">
 							<p:menuitem value="Cadastrar" actionListener="#{menuView.save}"
-								update="" icon=".ui-icon-person" />
-							<p:menuitem value="Entrar" action="login.xhtml"
-								icon=".ui-icon-arrowthickstop-1-e" url="../Livraria/login.xhtml" />
+								update="" icon=".ui-icon-person" rendered="#{!UsuarioMB.islogado}"/>
+							<p:menuitem value="Entrar" action="login.xhtml" icon=".ui-icon-arrowthickstop-1-e" url="../Livraria/login.xhtml" rendered="#{!UsuarioMB.islogado}"/>
+							<p:menuitem value="Perfil" actionListener="#{menuView.save}"
+								update="" icon=".ui-icon-person" rendered="#{UsuarioMB.islogado}"  />
+							<p:menuitem value="Sair" action="login.xhtml"
+								icon=".ui-icon-arrowthickstop-1-e" url="../Livraria/login.xhtml" rendered="#{UsuarioMB.islogado}"/>
 						</p:menuButton>
 					</h:outputLabel>
 				</h:form>
