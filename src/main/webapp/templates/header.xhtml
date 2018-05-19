@@ -4,7 +4,8 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
-	xmlns:h="http://java.sun.com/jsf/html">
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
 
 <body>
 	<ui:composition>
@@ -14,6 +15,8 @@
 			<div class="logotipo">
 				<h:graphicImage value="/imagens/logo-livraria.png" id="logo" />
 			</div>
+			
+				
 
 			<nav class="menu-opcoes">
 			<ul>
@@ -26,16 +29,29 @@
 			</ul>
 			</nav>
 
-
-			
-
+	
 		</h:panelGrid> <!--</div>--> 
-		<div class="buscar-produtos">
+		
+			
+		<div class="logar">
+			<h:form>
+		<h:outputLabel> 
+		 	<p:menuButton value="Entrar">
+       		 <p:menuitem value="Cadastrar" actionListener="#{menuView.save}" update="" icon=".ui-icon-person"/>
+      		  <p:menuitem value="Entrar" action="login.xhtml"  icon=".ui-icon-arrowthickstop-1-e"  url="../Livraria/login.xhtml"/>
+      		 </p:menuButton>
+    	</h:outputLabel>  
+    		 </h:form>   
+       
+      </div>
+		
+		<div class="buscar-produtos">	
 				<h:form id="form_busca">
 					<h:inputText class="texto" value= "#{livroMB.titulo}"/>
 					<h:commandButton class="button-pesquisa" value="" image="/imagens/busca.png" action= "#{livroMB.pesquisar}"/>
 				</h:form>
 		</div>
+		
 		
 		</header>
 		
