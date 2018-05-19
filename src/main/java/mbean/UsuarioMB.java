@@ -62,14 +62,14 @@ public class UsuarioMB {
 	}
 	
 	public void setLogado(boolean logado){
-		this.logado = logado
+		this.logado = logado;
 	}
 	
 	
 	public String autenticar() {
 		String validacao=null;
 		Usuario usuario = new Usuario();
-		usuario.setUsename(this.userName);
+		usuario.setUserName(this.userName);
 		usuario.setSenha(this.senha);
 		servico = new UsuarioServico();
 		
@@ -82,7 +82,7 @@ public class UsuarioMB {
 		return validacao;
 	}
 	
-public String cadastrar () {
+/*public String cadastrar () {
 	Usuario usuario = new Usuario();
 	usuario.setEmail(this.getEmail());
 	usuario.setId(this.getCod());
@@ -119,7 +119,8 @@ servico.pesquisar (usuario);
 resetar();
 return "pesquisa.xhtml";
 
-}
+}*/
+	
 public void resetar() {
 	this.cod=0;
 	this.email=null;

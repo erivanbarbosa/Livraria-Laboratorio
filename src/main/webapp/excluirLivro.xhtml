@@ -4,11 +4,13 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:ui="http://java.sun.com/jsf/facelets">
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
 
 <h:body>
 	<ui:composition template="templates/principal.xhtml">
 		<ui:define name="conteudo">
+<p:messages id="msgErro" showDetail="true" closable="true" autoUpdate="true" />
 
 			<h:form>
 				<h1>exclusão de livro</h1>
