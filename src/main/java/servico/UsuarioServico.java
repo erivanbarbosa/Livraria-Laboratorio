@@ -1,5 +1,6 @@
 package servico;
 
+import dao.UsuarioDao;
 import modelo.Usuario;
 
 public class UsuarioServico {

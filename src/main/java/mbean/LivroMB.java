@@ -1,10 +1,13 @@
 package mbean;
 
+import java.sql.SQLException;
+
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
 import modelo.Livro;
 import servico.LivroServico;
+import util.MensagensJSF;
 
 @SessionScoped
 @ManagedBean
@@ -96,15 +99,18 @@ public class LivroMB {
 
 	}
 
-	public String excluir() {
-
-		livro = new Livro();
-		livro.setIdLivro(idLivro);
-		servico = new LivroServico();
-		servico.excluir(livro);
-		resetar();
-
-		return "exemplo.xhtml";
+	public void excluir() {
+		try {
+			livro = new Livro();
+			livro.setIdLivro(idLivro);
+			servico = new LivroServico();
+			servico.excluir(livro);
+			MensagensJSF.adicionarMensagemSucesso("Livro Excluido com Sucesso!");
+		} catch (SQLException e) {
+			e.printStackTrace();
+			MensagensJSF.adicionarMensagemErro("Codigo do erro: " + e.getSQLState() + " \n" + e.getMessage());
+		}
+		resetar();		
 	}
 	
 	public String adicionar() {

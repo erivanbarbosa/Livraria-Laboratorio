@@ -1,5 +1,6 @@
 package servico;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 import dao.LivroDao;
@@ -16,10 +17,10 @@ public class LivroServico {
 
 	}
 	
-	public int excluir(Livro livro) {
+	public void excluir(Livro livro) throws SQLException {
 
 		dao = new LivroDao();
-		return dao.excluir(livro);
+		dao.excluir(livro);
 
 	}
 

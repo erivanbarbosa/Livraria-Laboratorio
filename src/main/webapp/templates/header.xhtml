@@ -9,52 +9,54 @@
 
 <body>
 	<ui:composition>
-		<header> <!--  <div class="header-main">--> 
-		<h:panelGrid columns="5" styleClass="header-panel-grid-class">
+		<header> <!--  <div class="header-main">-->
 
-			<div class="logotipo">
+		<div class="ui-g">
+			<div class="ui-g-1 logotipo">
 				<h:graphicImage value="/imagens/logo-livraria.png" id="logo" />
 			</div>
-			
-				
 
-			<nav class="menu-opcoes">
-			<ul>
-				<li><a href="#">LIVROS</a></li>
-				<li><a href="#">CATEGORIAS</a></li>
-				<li><a href="#">RECOMENDADOS</a></li>
-				<li><a href="#">LANCAMENTOS</a></li>
-				<!--   <li><a href="cadastrarLivro.xhtml">Administracao</a></li>-->
-				
-			</ul>
-			</nav>
+			<div class="ui-g-6 menu-opcoes">
+				<nav>
+				<ul>
+					<li><a href="#">LIVROS</a></li>
+					<li><a href="#">CATEGORIAS</a></li>
+					<li><a href="#">RECOMENDADOS</a></li>
+					<li><a href="#">LANCAMENTOS</a></li>
+					<!--   <li><a href="cadastrarLivro.xhtml">Administracao</a></li>-->
 
-	
-		</h:panelGrid> <!--</div>--> 
-		
-			
+				</ul>
+				</nav>
+
+			</div>
+			<div class="ui-g-5 buscar-produtos">
+				<h:form id="form_busca">
+					<h:inputText class="texto" value="#{livroMB.titulo}" />
+					<h:commandButton class="button-pesquisa" value=""
+						image="/imagens/busca.png" action="#{livroMB.pesquisar}" />
+				</h:form>
+			</div>
+
+		</div>
+
 		<div class="logar">
 			<h:form>
-		<h:outputLabel> 
-		 	<p:menuButton value="Entrar">
-       		 <p:menuitem value="Cadastrar" actionListener="#{menuView.save}" update="" icon=".ui-icon-person"/>
-      		  <p:menuitem value="Entrar" action="login.xhtml"  icon=".ui-icon-arrowthickstop-1-e"  url="../Livraria/login.xhtml"/>
-      		 </p:menuButton>
-    	</h:outputLabel>  
-    		 </h:form>   
-       
-      </div>
-		
-		<div class="buscar-produtos">	
-				<h:form id="form_busca">
-					<h:inputText class="texto" value= "#{livroMB.titulo}"/>
-					<h:commandButton class="button-pesquisa" value="" image="/imagens/busca.png" action= "#{livroMB.pesquisar}"/>
-				</h:form>
-		</div>
-		
-		
+				<h:outputLabel>
+					<p:menuButton value="Entrar">
+						<p:menuitem value="Cadastrar" actionListener="#{menuView.save}"
+							update="" icon=".ui-icon-person" />
+						<p:menuitem value="Entrar" action="login.xhtml"
+							icon=".ui-icon-arrowthickstop-1-e" url="../Livraria/login.xhtml" />
+					</p:menuButton>
+				</h:outputLabel>
+			</h:form>
 		</header>
-		
+		</div>
+
+
+
+
+		<p:inputText rendered="false"></p:inputText>
 	</ui:composition>
 </body>
 </html>

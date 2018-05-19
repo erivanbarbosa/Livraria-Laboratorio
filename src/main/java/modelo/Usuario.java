@@ -5,7 +5,7 @@ import modelo.enuns.TipoUsuario;
 public class Usuario {
 	
 	private int id;
-	private String usename;
+	private String userName;
 	private String nomeUsuario;
 	private String email;
 	private String senha;
@@ -18,11 +18,11 @@ public class Usuario {
 	public void setId(int id) {
 		this.id = id;
 	}
-	public String getUsename() {
-		return usename;
+	public String getUserName() {
+		return userName;
 	}
-	public void setUsename(String usename) {
-		this.usename = usename;
+	public void setUserName(String usename) {
+		this.userName = usename;
 	}
 	public String getNomeUsuario() {
 		return nomeUsuario;
