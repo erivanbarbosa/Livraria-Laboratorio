@@ -1,6 +1,5 @@
  package mbean;
 
-import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
@@ -82,45 +81,6 @@ public class UsuarioMB {
 		resetar();
 		return validacao;
 	}
-	
-/*public String cadastrar () {
-	Usuario usuario = new Usuario();
-	usuario.setEmail(this.getEmail());
-	usuario.setId(this.getCod());
-	usuario.setNomeUsuario(this.getNomeUsuario());
-	usuario.setSenha(this.getSenha());
-	usuario.setTipoUsuario(this.getTipousuario());
-	usuario.setUsename(this.getUserName());
-	servico = new UsuarioServico();
-	servico.cadastrar(usuario);
-	resetar();
-		return "cadastrado.xhtml";
-		
-}
-public String excluir () {
-	Usuario usuario = new Usuario();
-	usuario.setEmail(this.getEmail());
-	usuario.setId(this.getCod());
-	usuario.setNomeUsuario(this.getNomeUsuario());
-	usuario.setSenha(this.getSenha());
-	usuario.setTipoUsuario(this.getTipousuario());
-	usuario.setUsename(this.getUserName());
-	servico = new UsuarioServico();
-	servico.excluir (usuario);
-	resetar();
-	return "excluido.xhtml";
-	
-	
-}
-public String pesquisar () {
-Usuario usuario = new Usuario();
-usuario.setUsename(this.getUserName());	
-servico = new UsuarioServico();
-servico.pesquisar (usuario);
-resetar();
-return "pesquisa.xhtml";
-
-}*/
 	
 public void resetar() {
 	this.cod=0;

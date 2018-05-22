@@ -4,16 +4,17 @@ import java.sql.SQLException;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import javax.faces.bean.ViewScoped;
 
 import modelo.Livro;
 import servico.LivroServico;
 import util.MensagensJSF;
 
-@SessionScoped
+@ViewScoped
 @ManagedBean
 public class LivroMB {
 
-	private Livro livro;
+	private Livro livro = new Livro();
 	private String autor;
 	private double preco;
 	private String imagem;
@@ -101,8 +102,8 @@ public class LivroMB {
 
 	public void excluir() {
 		try {
-			livro = new Livro();
-			livro.setIdLivro(idLivro);
+			//livro = new Livro();
+			//livro.setIdLivro(idLivro);
 			servico = new LivroServico();
 			servico.excluir(livro);
 			MensagensJSF.adicionarMensagemSucesso("Livro Excluido com Sucesso!");

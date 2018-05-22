@@ -10,52 +10,51 @@
 	margin-bottom: 10px;
 }
 
-.ui-g {
-	min-height: 100px;
+.div-logotipo {
+	min-height: 80px;
 }
 
-.logotipo{
+.logotipo {
+	width: 100px;
+	height: 80px;
 	min-width: 100px;
 	position: relative;
+	min-width: 100px;
 }
 
 .logotipo img {
-	width: 100px;
-    height: 80px;
-    position: absolute;
-    bottom: 0;
+	width: 100%;
+	height: 100%;
 }
 
 .buscar-produtos {
 	position: relative;
 }
 
-.buscar-produtos form .texto{
+.buscar-produtos form .texto {
 	position: absolute;
-    bottom: 0;
-    right: 35px;
-    height: 28px;
+	bottom: 0;
+	right: 35px;
+	height: 28px;
 }
 
-.buscar-produtos form .button-pesquisa{
+.buscar-produtos form .button-pesquisa {
 	position: absolute;
-    bottom: 0;
-    right: 0;
+	bottom: 0;
+	right: 0;
 }
 
-form #input-text-pesquisa{
+form #input-text-pesquisa {
 	position: absolute;
-    bottom: 0;
-    right: 35px;
+	bottom: 0;
+	right: 35px;
 }
 
-#input-button-pesquisa{
+#input-button-pesquisa {
 	position: absolute;
-    bottom: 0;
-    right: 0;
+	bottom: 0;
+	right: 0;
 }
-
-
 
 .menu-opcoes {
 	position: relative;
@@ -63,7 +62,7 @@ form #input-text-pesquisa{
 
 .menu-opcoes nav {
 	position: absolute;
-    bottom: 0px;
+	bottom: 0px;
 }
 
 .texto {
@@ -113,8 +112,8 @@ form #input-text-pesquisa{
 	max-width: 100%;
 }
 
-#conteudo-div img{
-    max-width: 100%;
+#conteudo-div img {
+	max-width: 100%;
 }
 
 #footer-div {
@@ -174,8 +173,31 @@ form #input-text-pesquisa{
 	margin: 10px;
 }
 
-.logar{
-	position:absolute;
-	top: 10px;	
-	right: 10px;
+.logar {
+	text-align: right;
+}
+
+.logar div, .div-logotipo div {
+	padding: 0;
+}
+
+.div-logotipo div {
+	height: 80px;
+}
+
+.container {
+	width: 400px;
+	height: 400px;
+	margin: 0 auto;
+}
+
+.h1-login {
+	font-size: 60px;
+	text-align: center;
+	font-weight: bold;
+	margin: 0;
+}
+
+.login button {
+	text-align: right;
 }

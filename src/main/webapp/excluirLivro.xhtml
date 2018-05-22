@@ -16,7 +16,7 @@
 				<h1>exclusão de livro</h1>
 				<h:panelGrid id="painel-excluir" columns="2">
 					<a>ID: </a>
-					<h:inputText value="#{livroMB.idLivro}" />
+					<h:inputText value="#{livroMB.livro.idLivro}" />
 					<h:commandButton value="Excluir Livro" action="#{livroMB.excluir}" />
 				</h:panelGrid>
 			</h:form>
