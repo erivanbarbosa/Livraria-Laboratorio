@@ -1,5 +1,6 @@
  package mbean;
 
+import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
@@ -65,7 +66,7 @@ public class UsuarioMB {
 		this.logado = logado;
 	}
 	
-	
+
 	public String autenticar() {
 		String validacao=null;
 		Usuario usuario = new Usuario();

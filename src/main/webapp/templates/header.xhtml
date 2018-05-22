@@ -9,11 +9,11 @@
 
 <body>
 	<ui:composition>
-		<header> <!--  <div class="header-main">-->
+		<header>
 
 		<div class="ui-g">
 			<div class="ui-g-1 logotipo">
-					<h:graphicImage value="/imagens/logo-livraria.png" id="logo" />
+				<h:graphicImage value="/imagens/logo-livraria.png" id="logo" />
 			</div>
 
 			<div class="ui-g-6 menu-opcoes">
@@ -27,24 +27,33 @@
 
 				</ul>
 				</nav>
-
 			</div>
+
 			<div class="ui-g-5 buscar-produtos">
-					<h:form id="form_busca">
-						<h:inputText class="texto" value="#{livroMB.titulo}" />
-						<h:commandButton class="button-pesquisa" value=""
-							image="/imagens/busca.png" action="#{livroMB.pesquisar}" />
-					</h:form>
+				<h:form id="form_busca">
+					<h:inputText class="texto" value="#{livroMB.titulo}" />
+					<h:commandButton class="button-pesquisa" value=""
+						image="/imagens/busca.png" action="#{livroMB.pesquisar}" />
+				</h:form>
 			</div>
+</div>
+			<div class="logar">
+				<h:form>
+					<h:outputLabel>
+						<p:menuButton value="Entrar">
+							<p:menuitem value="Cadastrar" actionListener="#{menuView.save}"
+								update="" icon=".ui-icon-person" rendered="#{!UsuarioMB.islogado}"/>
+							<p:menuitem value="Entrar" action="login.xhtml" icon=".ui-icon-arrowthickstop-1-e" url="../Livraria/login.xhtml" rendered="#{!UsuarioMB.islogado}"/>
+							<p:menuitem value="Perfil" actionListener="#{menuView.save}"
+								update="" icon=".ui-icon-person" rendered="#{UsuarioMB.islogado}"  />
+							<p:menuitem value="Sair" action="login.xhtml"
+								icon=".ui-icon-arrowthickstop-1-e" url="../Livraria/login.xhtml" rendered="#{UsuarioMB.islogado}"/>
+						</p:menuButton>
+					</h:outputLabel>
+				</h:form>
 
-		</div>
-
-
-
-
+			</div>
 		</header>
-
-
 
 
 
