@@ -114,7 +114,7 @@ public class LivroMB {
 		resetar();		
 	}
 	
-	public String adicionar() {
+	public String inserir() {
 		livro = new Livro();
 		livro.setDescricao(getDescricao());
 		livro.setAutor(getAutor());

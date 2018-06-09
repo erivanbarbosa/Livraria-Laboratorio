@@ -6,8 +6,11 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+import javax.persistence.EntityManager;
+
 import modelo.Livro;
 import util.FabricaConexao;
+import util.FabricaConexaoHibernate;
 import util.MensagensJSF;
 
 public class LivroDao {
@@ -43,38 +46,71 @@ public class LivroDao {
 		return lista;
 	}
 
-	public void excluir(Livro livro) throws SQLException {
+	/*
+	 * public void excluir(Livro livro) throws SQLException {
+	 * 
+	 * String excluirPorId = "DELETE FROM livro WHERE cod_livro = ?";
+	 * 
+	 * int id = livro.getIdLivro();
+	 * 
+	 * Connection conexao = FabricaConexao.getConexao(); PreparedStatement consulta
+	 * = conexao.prepareStatement(excluirPorId);
+	 * 
+	 * consulta.setInt(1, id); consulta.executeUpdate(); }
+	 */
 
-		String excluirPorId = "DELETE FROM livro WHERE cod_livro = ?";
+	/*
+	 * public int inserir(Livro livro) { String sql =
+	 * "INSERT  INTO livro (titulo,autor,preco,imagem,descricao) VALUES (?,?,?,?,?)"
+	 * ; int result = 0; try { Connection conn = FabricaConexao.getConexao();
+	 * PreparedStatement consulta = conn.prepareStatement(sql);
+	 * consulta.setString(1, livro.getTitulo()); consulta.setString(2,
+	 * livro.getAutor()); consulta.setDouble(3, livro.getPreco());
+	 * consulta.setString(4, livro.getImagem()); consulta.setString(5,
+	 * livro.getDescricao()); result = consulta.executeUpdate();
+	 * System.out.println("Dados inseridos!");
+	 * 
+	 * } catch (SQLException e) { System.out.println(e); }
+	 * 
+	 * return result; }
+	 */
 
-		int id = livro.getIdLivro();
+	public void excluir(Livro livro) {
+		EntityManager entityManager = FabricaConexaoHibernate.getEntityManager();
 
-		Connection conexao = FabricaConexao.getConexao();
-		PreparedStatement consulta = conexao.prepareStatement(excluirPorId);
+		entityManager.getTransaction().begin();
 
-		consulta.setInt(1, id);
-		consulta.executeUpdate();
+		livro = entityManager.find(Livro.class, livro.getIdLivro());
+
+		entityManager.remove(livro);
+
+		entityManager.getTransaction().commit();
+
+		entityManager.close();
+
 	}
 
 	public int inserir(Livro livro) {
-		String sql = "INSERT  INTO livro (titulo,autor,preco,imagem,descricao) VALUES (?,?,?,?,?)";
-		int result = 0;
-		try {
-			Connection conn = FabricaConexao.getConexao();
-			PreparedStatement consulta = conn.prepareStatement(sql);
-			consulta.setString(1, livro.getTitulo());
-			consulta.setString(2, livro.getAutor());
-			consulta.setDouble(3, livro.getPreco());
-			consulta.setString(4, livro.getImagem());
-			consulta.setString(5, livro.getDescricao());
-			result = consulta.executeUpdate();
-			System.out.println("Dados inseridos!");
 
-		} catch (SQLException e) {
-			System.out.println(e);
-		}
+		EntityManager entityManager = FabricaConexaoHibernate.getEntityManager();
 
-		return result;
+		entityManager.getTransaction().begin();
+
+		entityManager.persist(livro);
+
+		entityManager.getTransaction().commit();
+
+		livro.setAutor("Douglas");
+
+		entityManager.getTransaction().begin();
+
+		entityManager.persist(livro);
+		entityManager.merge(livro);
+		entityManager.getTransaction().commit();
+
+		entityManager.close();
+
+		return 1;
 	}
 
 }
