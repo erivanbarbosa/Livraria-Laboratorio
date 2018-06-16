@@ -10,10 +10,10 @@ public class LivroServico {
 
 	private LivroDao dao;
 
-	public int inserir(Livro livro) {
+	public void inserir(Livro livro) {
 
 		dao = new LivroDao();
-		return dao.inserir(livro);
+		dao.inserir(livro);
 
 	}
 	

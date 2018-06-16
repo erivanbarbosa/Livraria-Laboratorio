@@ -53,9 +53,12 @@ public class LivroDao {
 
 	}
 
-	public int inserir(Livro livro) {
-
-
-	}
-
+	public void inserir(Livro livro) {
+	
+			EntityManager entitymanager = FabricaConexaoHibernate.getEntityManager();
+			entitymanager.getTransaction().begin();
+			entitymanager.persist(livro);
+			entitymanager.getTransaction().commit();
+			entitymanager.close();
+		}	
 }
