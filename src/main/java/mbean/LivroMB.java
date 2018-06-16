@@ -30,7 +30,7 @@ public class LivroMB implements Serializable {
 	public String pesquisar() {
 		livros = new ArrayList<Livro>();
 		servico = new LivroServico();
-		livros = servico.pesquisar(livro);
+		livros = servico.pesquisar(titulo);
 
 		return "pesquisa.xhtml";
 

@@ -2,6 +2,7 @@ package servico;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 
 import dao.LivroDao;
 import modelo.Livro;
@@ -24,9 +25,9 @@ public class LivroServico {
 
 	}
 
-	public ArrayList<Livro> pesquisar(Livro livro) {
+	public List<Livro> pesquisar(String titulo) {
 		dao = new LivroDao();
-		return dao.pesquisar(livro.getTitulo());
+		return dao.pesquisar(titulo);
 		
 		
 	}

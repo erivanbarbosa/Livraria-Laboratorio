@@ -218,4 +218,9 @@ form #input-text-pesquisa {
 
 .acoesLivro{
 	width: 10%;
+	vertical-align: top;
+}
+
+.acoesLivro table {
+	margin: 0 auto;
 }

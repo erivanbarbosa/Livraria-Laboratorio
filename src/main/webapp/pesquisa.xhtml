@@ -13,7 +13,7 @@
 		<ui:define name="conteudo">
 
 			<h:form>
-				<p:dataScroller value="#{livroMB.livros}" var="livro" chunkSize="10">
+				<p:dataScroller value="#{livroMB.livros}" var="livro" chunkSize="5">
 					<f:facet name="header">
             Role para ver mais livros
         </f:facet>
@@ -56,9 +56,15 @@
 						</p:outputPanel>
 
 						<p:outputPanel>
+							<h:panelGrid >
+								    <p:commandButton id="iconOnly"  icon="ui-icon-pencil" title="Editar"  style="margin-bottom: 10px;" />
+								     <p:commandButton id="iconOnlys"  icon="ui-icon-trash" title="Excluir" />
+								
+							</h:panelGrid>
 
 						</p:outputPanel>
 					</h:panelGrid>
+					
 					<hr></hr>
 				</p:dataScroller>
 			</h:form>

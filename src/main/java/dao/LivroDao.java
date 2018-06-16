@@ -5,8 +5,10 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.EntityManager;
+import javax.persistence.Query;
 
 import modelo.Livro;
 import util.FabricaConexao;
@@ -15,7 +17,7 @@ import util.MensagensJSF;
 
 public class LivroDao {
 
-	public ArrayList<Livro> pesquisar(String titulo) {
+	/*public ArrayList<Livro> pesquisar(String titulo) {
 
 		String pesquisaPorNome = "SELECT TITULO, ID, AUTOR, PRECO, IMAGEM, DESCRICAO FROM LIVRO ";
 		Livro livro = null;
@@ -44,7 +46,7 @@ public class LivroDao {
 			e.printStackTrace();
 		}
 		return lista;
-	}
+	}*/
 
 	public void excluir(Livro livro) {
 		 EntityManager delete = FabricaConexaoHibernate.getEntityManager();
@@ -57,11 +59,23 @@ public class LivroDao {
 	}
 
 	public void inserir(Livro livro) {
-	
 			EntityManager entitymanager = FabricaConexaoHibernate.getEntityManager();
 			entitymanager.getTransaction().begin();
 			entitymanager.persist(livro);
+			
+			
 			entitymanager.getTransaction().commit();
 			entitymanager.close();
-		}	
+	}
+	
+	public List<Livro> pesquisar(String titulo)    {
+		
+		EntityManager entitymanager = FabricaConexaoHibernate.getEntityManager();
+		
+        Query query = entitymanager.createQuery("SELECT livro FROM Livro livro where livro.titulo like :nome");
+        query.setParameter("nome", "%" + titulo + "%");
+        List<Livro> livros = query.getResultList();
+        return livros;
+    }
+
 }
