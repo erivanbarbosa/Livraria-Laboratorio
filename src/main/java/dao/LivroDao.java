@@ -113,4 +113,20 @@ public class LivroDao {
 		return 1;
 	}
 
+	/*
+	 * public int inserir(Livro livro) { String sql =
+	 * "INSERT  INTO livro (titulo,autor,preco,imagem,descricao) VALUES (?,?,?,?,?)"
+	 * ; int result = 0; try { Connection conn = FabricaConexao.getConexao();
+	 * PreparedStatement consulta = conn.prepareStatement(sql);
+	 * consulta.setString(1, livro.getTitulo()); consulta.setString(2,
+	 * livro.getAutor()); consulta.setDouble(3, livro.getPreco());
+	 * consulta.setString(4, livro.getImagem()); consulta.setString(5,
+	 * livro.getDescricao()); result = consulta.executeUpdate();
+	 * System.out.println("Dados inseridos!");
+	 * 
+	 * } catch (SQLException e) { System.out.println(e); }
+	 * 
+	 * return result; }
+	 */
+
 }

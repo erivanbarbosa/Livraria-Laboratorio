@@ -4,50 +4,14 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:ui="http://java.sun.com/jsf/facelets"
-	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
-      xmlns:p="http://primefaces.org/ui">
+	xmlns:ui="http://java.sun.com/jsf/facelets">
 
 <h:body>
 	<ui:composition template="templates/principal.xhtml">
 		<ui:define name="conteudo">
-
 			<div class="container">
-				<h:form class="login" method="post">
-					<div class="ui-g">
-						<div class="ui-g-12">
-							<h1 class="h1-login">ENTRAR</h1>
-						</div>
-
-						<div class="ui-g-12 ui-fluid">
-							<p:inputText class="input" pt:placeholder="Usuario"
-								value="#{usuarioMB.userName}" />
-						</div>
-
-
-						<div class="ui-g-12 ui-fluid">
-							<p:password class="input" pt:placeholder="Senha"
-								value="#{usuarioMB.senha}" />
-						</div>
-
-						<div class="ui-g-12" style="text-align: right;">
-							<p:commandButton value="Entrar"
-								class="btn btn-primary btn-block btn-large"
-								action="#{usuarioMB.autenticar}"/>
-						</div>
-
-					</div>
-
-
-
-
-
-
-				</h:form>
-
+			
 			</div>
-
-
 
 		</ui:define>
 	</ui:composition>

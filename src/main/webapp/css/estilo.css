@@ -183,13 +183,9 @@ form #input-text-pesquisa {
 
 .div-logotipo div {
 	height: 80px;
+	overflow: hidden;
 }
 
-.container {
-	width: 400px;
-	height: 400px;
-	margin: 0 auto;
-}
 
 .h1-login {
 	font-size: 60px;
@@ -198,6 +194,9 @@ form #input-text-pesquisa {
 	margin: 0;
 }
 
-.login button {
-	text-align: right;
+.container {
+	width: 400px;
+	height: 400px;
+	margin: 0 auto;
 }
+
