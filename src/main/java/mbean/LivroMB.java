@@ -1,6 +1,8 @@
 package mbean;
 
-import java.sql.SQLException;
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
@@ -12,7 +14,7 @@ import util.MensagensJSF;
 
 @ViewScoped
 @ManagedBean
-public class LivroMB {
+public class LivroMB implements Serializable {
 
 	private Livro livro = new Livro();
 	private String autor;
@@ -22,6 +24,39 @@ public class LivroMB {
 	private LivroServico servico;
 	private String titulo;
 	private int idLivro;
+	private String titulo2;
+	private List <Livro> lista ;
+	public List getLista() {
+		return lista;
+	}
+
+	public void setLista(List lista) {
+		this.lista = lista;
+	}
+
+	public void setLivros(List<Livro> livros) {
+		this.livros = livros;
+	}
+
+	public String getTitulo2() {
+		return titulo2;
+	}
+
+	public void setTitulo2(String titulo2) {
+		this.titulo2 = titulo2;
+	}
+
+	private List<Livro> livros;
+	
+	
+	
+	public List<Livro> getLivros() {
+		return livros;
+	}
+
+	public void setLivros(ArrayList<Livro> livros) {
+		this.livros = livros;
+	}
 
 	public Livro getLivro() {
 		return livro;
@@ -88,15 +123,23 @@ public class LivroMB {
 	}
 
 	public String pesquisar() {
+	livros = new ArrayList<Livro>();
+	livro = new Livro();
+	livro.setTitulo(titulo);
+	servico = new LivroServico();
+	livros = servico.perquisar(livro);
 
-		System.out.println("pesquisar");
-		livro = new Livro();
-		livro.setTitulo(titulo);
-		servico = new LivroServico();
-		servico.perquisar(livro);
-		resetar();
+	
 
-		return "pesquisa.xhtml";
+/*	for(Livro lista : livros ) {
+	this.setTitulo2(lista.getTitulo());
+	this.setAutor(lista.getAutor());
+	this.setPreco(lista.getPreco());
+	this.setDescricao(lista.getDescricao());
+	this.setIdLivro(lista.getIdLivro());
+	}*/
+	
+	return "pesquisa.xhtml";
 
 	}
 
@@ -124,6 +167,9 @@ public class LivroMB {
 		servico = new LivroServico();
 		servico.inserir(livro);
 		resetar();
+		
+		
+		
 
 		return "cadastrado.xhtml";
 	}
