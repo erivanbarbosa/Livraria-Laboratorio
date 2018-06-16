@@ -1,18 +1,18 @@
 package mbean;
 
 import java.io.Serializable;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
-import javax.faces.bean.ViewScoped;
 
 import modelo.Livro;
 import servico.LivroServico;
 import util.MensagensJSF;
 
-@ViewScoped
+@SessionScoped
 @ManagedBean
 public class LivroMB implements Serializable {
 
@@ -25,13 +25,53 @@ public class LivroMB implements Serializable {
 	private String titulo;
 	private int idLivro;
 	private String titulo2;
-	private List <Livro> lista ;
-	public List getLista() {
-		return lista;
+	private List<Livro> livros;
+
+	public String pesquisar() {
+		livros = new ArrayList<Livro>();
+		servico = new LivroServico();
+		livros = servico.pesquisar(livro);
+
+		return "pesquisa.xhtml";
+
 	}
 
-	public void setLista(List lista) {
-		this.lista = lista;
+	public void excluir() {
+		try {
+			// livro = new Livro();
+			// livro.setIdLivro(idLivro);
+			servico = new LivroServico();
+			servico.excluir(livro);
+			MensagensJSF.adicionarMensagemSucesso("Livro Excluido com Sucesso!");
+		} catch (SQLException e) {
+			e.printStackTrace();
+			MensagensJSF.adicionarMensagemErro("Codigo do erro: " + e.getSQLState() + " \n" + e.getMessage());
+		}
+		resetar();
+	}
+
+	public String inserir() {
+		livro = new Livro();
+		livro.setDescricao(getDescricao());
+		livro.setAutor(getAutor());
+		livro.setImagem(getImagem());
+		livro.setPreco(getPreco());
+		livro.setTitulo(getTitulo());
+		servico = new LivroServico();
+		servico.inserir(livro);
+		resetar();
+
+		return "cadastrado.xhtml";
+	}
+
+	private void resetar() {
+		livro = null;
+		idLivro = 0;
+		titulo = null;
+		autor = null;
+		imagem = null;
+		descricao = null;
+		preco = 0;
 	}
 
 	public void setLivros(List<Livro> livros) {
@@ -46,16 +86,8 @@ public class LivroMB implements Serializable {
 		this.titulo2 = titulo2;
 	}
 
-	private List<Livro> livros;
-	
-	
-	
 	public List<Livro> getLivros() {
 		return livros;
-	}
-
-	public void setLivros(ArrayList<Livro> livros) {
-		this.livros = livros;
 	}
 
 	public Livro getLivro() {
@@ -120,68 +152,6 @@ public class LivroMB implements Serializable {
 
 	public void setIdLivro(int idLivro) {
 		this.idLivro = idLivro;
-	}
-
-	public String pesquisar() {
-	livros = new ArrayList<Livro>();
-	livro = new Livro();
-	livro.setTitulo(titulo);
-	servico = new LivroServico();
-	livros = servico.perquisar(livro);
-
-	
-
-/*	for(Livro lista : livros ) {
-	this.setTitulo2(lista.getTitulo());
-	this.setAutor(lista.getAutor());
-	this.setPreco(lista.getPreco());
-	this.setDescricao(lista.getDescricao());
-	this.setIdLivro(lista.getIdLivro());
-	}*/
-	
-	return "pesquisa.xhtml";
-
-	}
-
-	public void excluir() {
-		try {
-			//livro = new Livro();
-			//livro.setIdLivro(idLivro);
-			servico = new LivroServico();
-			servico.excluir(livro);
-			MensagensJSF.adicionarMensagemSucesso("Livro Excluido com Sucesso!");
-		} catch (SQLException e) {
-			e.printStackTrace();
-			MensagensJSF.adicionarMensagemErro("Codigo do erro: " + e.getSQLState() + " \n" + e.getMessage());
-		}
-		resetar();		
-	}
-	
-	public String inserir() {
-		livro = new Livro();
-		livro.setDescricao(getDescricao());
-		livro.setAutor(getAutor());
-		livro.setImagem(getImagem());
-		livro.setPreco(getPreco());
-		livro.setTitulo(getTitulo());
-		servico = new LivroServico();
-		servico.inserir(livro);
-		resetar();
-		
-		
-		
-
-		return "cadastrado.xhtml";
-	}
-
-	private void resetar() {
-		livro = null;
-		idLivro = 0;
-		titulo = null;
-		autor=null;
-		imagem=null;
-		descricao=null;
-		preco=0;
 	}
 
 }

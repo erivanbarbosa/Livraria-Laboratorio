@@ -201,3 +201,21 @@ form #input-text-pesquisa {
 .login button {
 	text-align: right;
 }
+
+
+.imgLivro{
+	width: 10%;
+}
+
+.detalhesLivro{
+	
+	width: 40%;
+}
+
+.descricaoLivro{
+	width: 40%;
+}
+
+.acoesLivro{
+	width: 10%;
+}

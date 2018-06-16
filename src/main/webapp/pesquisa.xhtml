@@ -10,46 +10,18 @@
 
 <h:body>
 	<ui:composition template="templates/principal.xhtml">
-		<!-- <ui:define name="conteudo">
-
-
-		 <h:form> 
-    <p:dataScroller value="#{LivroMB.livros}" var="livro" chunkSize="10">
-        <h:outputText value="#{livro.titulo}" style="font-weight: bold"/>
-        
-
- 
-        <h:panelGrid columns="2" style="width:100%" columnClasses="logo,detail">
-            
-            <p:outputPanel>
-                <h:panelGrid columns="2" cellpadding="5">
-                    <h:outputText value="Titulo:" />
-                    <h:outputText value="#{livro.titulo}" style="font-weight: bold"/>
-                    <h:outputText value="Autor:" />
-                    <h:outputText value="#{livro.autor}" style="font-weight: bold"/>
-                    <h:outputText value="Preço:" />
-                    <h:outputText value="#{livro.preco}" style="font-weight: bold"/>
-                </h:panelGrid>
-            </p:outputPanel>
-        </h:panelGrid>
-    </p:dataScroller>
-</h:form>
-
-
-		</ui:define> -->
-
-
 		<ui:define name="conteudo">
 
 			<h:form>
 				<p:dataScroller value="#{livroMB.livros}" var="livro" chunkSize="10">
 					<f:facet name="header">
-            Scroll Down to Load More Cars
+            Role para ver mais livros
         </f:facet>
 
-					<h:panelGrid columns="3" style="width:100%"
-						columnClasses="logos,detail">
-	<img src="https://viverdeblog.com/wp-content/uploads/2017/04/como-escrever-um-livro-topo.png" style="width:100px;height: 100px;"></img>
+					<h:panelGrid columns="4" style="width:100%"
+						columnClasses="imgLivro, detalhesLivro, descricaoLivro, acoesLivro ">
+						<img
+							src="https://viverdeblog.com/wp-content/uploads/2017/04/como-escrever-um-livro-topo.png"></img>
 
 						<p:outputPanel>
 							<h:panelGrid columns="1" cellpadding="5">
@@ -65,13 +37,26 @@
 								<h:outputText value="#{livro.preco}"
 									style="font-weight: bold; font-size:30px;" />
 
-									
-									
+
+
 							</h:panelGrid>
 						</p:outputPanel>
-						
+
 						<p:outputPanel>
-							
+							<h:outputText value="SINOPSE"
+								style="font-weight: bold; font-size:30px;" />
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+								Integer tincidunt augue nec libero venenatis, non bibendum lorem
+								condimentum. Donec magna ligula, porttitor at euismod at,
+								bibendum ac augue. Integer pretium eu libero id feugiat. Nunc
+								vestibulum scelerisque augue, quis vulputate nisl congue vel.
+								Cras tortor ex, dapibus a vulputate a, hendrerit eget quam. Cras
+								mattis pulvinar eros id laoreet. Duis dictum accumsan lacus in
+								lobortis.</p>
+						</p:outputPanel>
+
+						<p:outputPanel>
+
 						</p:outputPanel>
 					</h:panelGrid>
 					<hr></hr>
