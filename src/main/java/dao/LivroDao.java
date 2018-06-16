@@ -46,16 +46,22 @@ public class LivroDao {
 		return lista;
 	}
 
-
-
 	public void excluir(Livro livro) {
-
+		 EntityManager delete = FabricaConexaoHibernate.getEntityManager();
+		 delete.getTransaction().begin();
+		 livro = delete.find(Livro.class, livro.getIdLivro());		 
+		 delete.remove(livro);
+		 delete.getTransaction().commit();
+		 delete.close();
 
 	}
 
-	public int inserir(Livro livro) {
-
-
-	}
-
+	public void inserir(Livro livro) {
+	
+			EntityManager entitymanager = FabricaConexaoHibernate.getEntityManager();
+			entitymanager.getTransaction().begin();
+			entitymanager.persist(livro);
+			entitymanager.getTransaction().commit();
+			entitymanager.close();
+		}	
 }
