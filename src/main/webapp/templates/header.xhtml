@@ -18,8 +18,8 @@
 						<p:menuButton value="Entrar">
 							<p:menuitem value="Cadastrar" actionListener="#{menuView.save}"
 								update="" icon="ui-icon-person"
-								rendered="#{!UsuarioMB.islogado}" /> 
-								
+								rendered="#{!UsuarioMB.islogado}" />
+
 							<p:menuitem value="Entrar" action="login.xhtml"
 								icon="ui-icon-arrowthickstop-1-e" url="../Livraria/login.xhtml"
 								rendered="#{!UsuarioMB.islogado}" />
@@ -34,34 +34,31 @@
 			</div>
 		</div>
 
-		<div class="ui-g div-logotipo">
-			<div class="ui-g-1 logotipo">
+		<div class="ui-g">
+			<div class="ui-g-12 ui-md-4 ui-lg-2">
 				<h:graphicImage value="/imagens/logo-livraria.png" id="logo" />
 			</div>
 
-			<div class="ui-g-6 menu-opcoes" style="min-width:160px;">
-				<nav>
-				<ul>
-					<li><a href="#">LIVROS</a></li>
-					<li><a href="#">CATEGORIAS</a></li>
-					<li><a href="#">RECOMENDADOS</a></li>
-					<li><a href="#">LANCAMENTOS</a></li>
-					<!--   <li><a href="cadastrarLivro.xhtml">Administracao</a></li>-->
+			<div class="ui-g-12 ui-md-1 ui-lg-10">
+				<div class="ui-g-hide ui-g-12" style="height: 100px"></div>
+				<div class="ui-g-12 ui-md-1 ui-lg-8 ui-g-nopad menu-opcoes">
+					<ul class="ui-g-12 ui-md-1 ui-lg-12 ui-g-nopad">
+						<li class="ui-g-12 ui-md-1 ui-lg-1 ui-g-nopad" style="margin-right: 20px;"><a href="#">LIVROS</a></li>
+						<li class="ui-g-12 ui-md-1 ui-lg-2 ui-g-nopad" style="margin-right: 20px;"><a href="#">CATEGORIAS</a></li>
+						<li class="ui-g-12 ui-md-1 ui-lg-3 ui-g-nopad"><a href="#">RECOMENDADOS</a></li>
+						<li class="ui-g-12 ui-md-1 ui-lg-3 ui-g-nopad"><a href="#">LANCAMENTOS</a></li>
+					</ul>
+				</div>
 
-				</ul>
-				</nav>
-			</div>
-
-			<div class="ui-g-5 buscar-produtos">
-				<h:form id="form_busca">
-					<p:inputText class="texto" value="#{livroMB.titulo}" />
-					<h:commandButton class="button-pesquisa" value=""
-						image="/imagens/busca.png" action="#{livroMB.pesquisar}" />
-				</h:form>
+				<div class="ui-g-12 ui-md-1 ui-lg-4 ui-g-nopad">
+					<h:form>
+						<p:inputText value="#{livroMB.titulo}" style="width:80%" />
+						<h:commandButton value="" image="/imagens/busca.png" action="#{livroMB.pesquisar}" style="margin-top: 10px;" />
+					</h:form>
+				</div>
 			</div>
 		</div>
-<p:separator></p:separator>
-		</header>
+		<p:separator></p:separator> </header>
 
 
 
