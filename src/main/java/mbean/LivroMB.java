@@ -1,6 +1,9 @@
 package mbean;
 
+import java.io.Serializable;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
@@ -10,7 +13,7 @@ import modelo.Livro;
 import servico.LivroServico;
 import util.MensagensJSF;
 
-@ViewScoped
+@SessionScoped
 @ManagedBean
 public class LivroMB implements Serializable {
 
@@ -23,8 +26,9 @@ public class LivroMB implements Serializable {
 	private String titulo;
 	private int idLivro;
 	private String titulo2;
-	private List <Livro> lista ;
+	private List<Livro> lista ;
 	public List getLista() {
+		
 		return lista;
 	}
 
@@ -125,17 +129,8 @@ public class LivroMB implements Serializable {
 	livro = new Livro();
 	livro.setTitulo(titulo);
 	servico = new LivroServico();
-	livros = servico.perquisar(livro);
+	livros = servico.pesquisar(livro);
 
-	
-
-/*	for(Livro lista : livros ) {
-	this.setTitulo2(lista.getTitulo());
-	this.setAutor(lista.getAutor());
-	this.setPreco(lista.getPreco());
-	this.setDescricao(lista.getDescricao());
-	this.setIdLivro(lista.getIdLivro());
-	}*/
 	
 	return "pesquisa.xhtml";
 

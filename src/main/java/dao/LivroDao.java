@@ -17,7 +17,7 @@ public class LivroDao {
 
 	public ArrayList<Livro> pesquisar(String titulo) {
 
-		String pesquisaPorNome = "SELECT TITULO, COD_LIVRO, AUTOR, PRECO, IMAGEM, DESCRICAO FROM LIVRO WHERE TITULO LIKE ?";
+		String pesquisaPorNome = "SELECT TITULO, ID, AUTOR, PRECO, IMAGEM, DESCRICAO FROM LIVRO WHERE TITULO LIKE ?";
 		Livro livro = null;
 
 		ArrayList<Livro> lista = new ArrayList<Livro>();
@@ -26,12 +26,12 @@ public class LivroDao {
 			Connection conexao = FabricaConexao.getConexao();
 			PreparedStatement consulta = conexao.prepareStatement(pesquisaPorNome);
 			
-			consulta.setString(1,"%"+titulo.toUpperCase()+"%");
+			consulta.setString(1,"%"+titulo+"%");
 			ResultSet resultado = consulta.executeQuery();
 
 			while (resultado.next()) {
 				livro = new Livro();
-				livro.setIdLivro(resultado.getInt("COD_LIVRO"));
+				livro.setIdLivro(resultado.getInt("ID"));
 				livro.setTitulo(resultado.getString("TITULO"));
 				livro.setAutor(resultado.getString("AUTOR"));
 				livro.setDescricao(resultado.getString("DESCRICAO"));

@@ -207,3 +207,19 @@ form #input-text-pesquisa {
         height: 5px !important;
     }
 }
+
+.details {
+	width: 40%;
+}
+
+.sinopse {
+	width: 40%;
+}
+
+.imgLivro {
+	width: 10%;
+}
+
+.actions{
+	width: 10%;
+}
