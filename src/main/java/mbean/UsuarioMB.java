@@ -74,7 +74,7 @@ public class UsuarioMB {
 		servico = new UsuarioServico();
 		
 		if(servico.autenticar(usuario)!= null) {
-			validacao="cadastrarlivro.xhtml";
+			validacao="cadastrarLivro.xhtml";
 		}else {
 			validacao="erroautenticar.xhtml";
 		}

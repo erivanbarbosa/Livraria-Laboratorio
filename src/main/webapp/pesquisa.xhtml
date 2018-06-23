@@ -10,15 +10,10 @@
 
 <h:body>
 	<ui:composition template="templates/principal.xhtml">
-		<!-- <ui:define name="conteudo">
-
-		</ui:define> -->
-
-
 		<ui:define name="conteudo">
 
 			<h:form>
-				<p:dataScroller value="#{livroMB.livros}" var="livro" chunkSize="10">
+				<p:dataScroller value="#{livroMB.livros}" var="livro" chunkSize="5">
 					<f:facet name="header">
             Role para ver mais livros
         </f:facet>
@@ -53,10 +48,17 @@
 								
 								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc id aliquet felis, mollis lobortis dui. Duis ut nulla id enim malesuada lobortis. Duis et risus metus. Donec sit amet iaculis neque, sit amet luctus est. Aenean sem ex, euismod ac auctor sed, tempor sit amet dolor. Proin ac nisi eget odio pretium eleifend. Etiam interdum arcu consectetur, fringilla nunc at, pellentesque sem. Aenean pharetra tempor dolor, ac aliquet ante dictum at. Integer dapibus eleifend enim at egestas.</p>
 						</p:outputPanel>
-						
+
 						<p:outputPanel>
-								</p:outputPanel>
+							<h:panelGrid >
+								    <p:commandButton id="iconOnly"  icon="ui-icon-pencil" title="Editar"  style="margin-bottom: 10px;" />
+								     <p:commandButton id="iconOnlys"  icon="ui-icon-trash" title="Excluir" />
+								
+							</h:panelGrid>
+
+						</p:outputPanel>
 					</h:panelGrid>
+					
 					<hr></hr>
 				</p:dataScroller>
 			</h:form>

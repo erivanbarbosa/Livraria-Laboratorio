@@ -1,16 +1,30 @@
 package modelo;
 
+import java.io.Serializable;
+
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 import modelo.enuns.TipoUsuario;
 
-public class Usuario {
+@Entity
+@Table (name="USUARIO")
+public class Usuario implements Serializable{
 	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	private String userName;
 	private String nomeUsuario;
 	private String email;
 	private String senha;
+	@Enumerated(EnumType.STRING)
 	private TipoUsuario tipoUsuario;
-
 	
 	public int getId() {
 		return id;

@@ -15,7 +15,7 @@ public class Livro implements Serializable{
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "ID")
+	@Column(name = "COD_LIVRO")
 	private int idLivro;
 	
 	private String titulo;
