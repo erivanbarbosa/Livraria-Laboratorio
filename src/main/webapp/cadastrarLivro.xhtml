@@ -16,33 +16,32 @@
 		<ui:define name="conteudo">
 
 			<h:form>
-				<center>
+			
 					<h1 id="titulocadastrar">Cadastrar Livro</h1>
 					<table columns="1">
 						<h:panelGrid id="painel-excluir" columns="2">
-							<a>Título: </a>
+							<label>Título: </label>
 								<p:inputText value="#{livroMB.titulo}" id="titulo" size="30"
              					   required="true"  requiredMessage="Campo titulo deve ser preenchido."/>
              					   		
-             				<a>Autor</a>
+             				<label>Autor: </label>
              				<p:inputText value="#{livroMB.autor}" id="autor" size="30"
              					   required="true"  requiredMessage="Campo autor deve ser preenchido."/>
              					   
-								<a>Preço: </a>
+								<label>Preço: </label>
 								<p:inputText value="#{livroMB.preco}" id="preco" size="30"
              					   required="true"  requiredMessage="Campo preço deve ser preenchido."/>
              					
-								<a>Descrição: </a>
+								<label>Descrição: </label>
 								<p:inputText value="#{livroMB.descricao}" id="descricao" size="30"
              					   required="true"  requiredMessage="Campo descrição deve ser preenchido."/>
-								<a>Imagem: </a>
-								<p:fileUpload value="#{livroMB.imagem}" mode="simple" skinSimple="true" label="Escolher"/>
-								<a></a>
+								<label>Imagem: </label>
+								<p:inputText value="#{livroMB.imagem}" id="imagem" size="30"
+             					   required="true"  requiredMessage="Campo imagem deve ser preenchido."/>
 								 <p:commandButton value="Cadastrar Livro" id="cadastrar" actionListener="#{livroMB.inserir()}" ajax="false" />
 									
 						</h:panelGrid>
 					</table>
-				</center>
 
 			</h:form>
 

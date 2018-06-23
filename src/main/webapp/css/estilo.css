@@ -172,6 +172,10 @@ form #input-text-pesquisa {
 	text-align: right;
 }
 
+.align-right{
+	text-align: right;
+}
+
 .logar div, .div-logotipo div {
 	padding: 0;
 }
@@ -214,6 +218,7 @@ form #input-text-pesquisa {
 
 .sinopse {
 	width: 40%;
+	height: 149px;
 }
 
 .imgLivro {

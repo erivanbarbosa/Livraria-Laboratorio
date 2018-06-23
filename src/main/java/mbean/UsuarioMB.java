@@ -2,6 +2,7 @@
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import javax.faces.context.FacesContext;
 
 import modelo.Usuario;
 import modelo.enuns.TipoUsuario;
@@ -75,11 +76,22 @@ public class UsuarioMB {
 		
 		if(servico.autenticar(usuario)!= null) {
 			validacao="cadastrarLivro.xhtml";
+			logado = true;
 		}else {
 			validacao="erroautenticar.xhtml";
+			logado = false;
 		}
 		resetar();
+		FacesContext.getCurrentInstance().getPartialViewContext().getRenderIds().add("cadastrarItem");
+
 		return validacao;
+	}
+	
+	public String sair() {
+		resetar();
+		logado = false;
+		
+		return "index.xhtml";
 	}
 	
 public void resetar() {

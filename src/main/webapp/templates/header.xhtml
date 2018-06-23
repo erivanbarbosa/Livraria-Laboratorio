@@ -13,21 +13,21 @@
 
 		<div class="ui-g logar">
 			<div class="ui-g-12">
-				<h:form>
+				<h:form prependId="false">
 					<h:outputLabel>
 						<p:menuButton value="Entrar">
 							<p:menuitem value="Cadastrar" actionListener="#{menuView.save}"
 								update="" icon="ui-icon-person"
-								rendered="#{!UsuarioMB.islogado}" />
+								rendered="#{usuarioMB.logado == false}" id="cadastrarItem" />
 
 							<p:menuitem value="Entrar" action="login.xhtml"
 								icon="ui-icon-arrowthickstop-1-e" url="../Livraria/login.xhtml"
-								rendered="#{!UsuarioMB.islogado}" />
+								rendered="#{usuarioMB.logado == false}" />
 							<p:menuitem value="Perfil" actionListener="#{menuView.save}"
-								update="" icon="ui-icon-person" rendered="#{UsuarioMB.islogado}" />
-							<p:menuitem value="Sair" action="login.xhtml"
-								icon="ui-icon-arrowthickstop-1-e" url="../Livraria/login.xhtml"
-								rendered="#{UsuarioMB.islogado}" />
+								update="" icon="ui-icon-person" rendered="#{usuarioMB.logado == true}" />
+							<p:menuitem value="Sair" action="#{usuarioMB.sair}"
+								icon="ui-icon-arrowthickstop-1-e"
+								rendered="#{usuarioMB.logado == true}"/>
 						</p:menuButton>
 					</h:outputLabel>
 				</h:form>

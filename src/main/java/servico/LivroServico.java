@@ -25,7 +25,7 @@ public class LivroServico {
 
 	}
 
-	public ArrayList<Livro> pesquisar(Livro livro) {
+	public List<Livro> pesquisar(String titulo) {
 		dao = new LivroDao();
 		return dao.pesquisar(titulo);
 		

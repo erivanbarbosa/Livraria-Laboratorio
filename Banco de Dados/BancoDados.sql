@@ -61,6 +61,6 @@ CREATE TABLE USUARIO (
 INSERT INTO USUARIO 
 		(USERNAME, NOMEUSUARIO, EMAIL, SENHA, TIPOUSUARIO) 
  VALUES 
- 		('admimistrador', 'administrador','rudimarcf@gmail.com', '123456','administrador');
+ 		('administrador', 'administrador','rudimarcf@gmail.com', '123456','ADMINISTRADOR');
 
 /* FIM TABELA */

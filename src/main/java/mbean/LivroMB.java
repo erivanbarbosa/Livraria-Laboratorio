@@ -38,8 +38,6 @@ public class LivroMB implements Serializable {
 
 	public void excluir() {
 		try {
-			// livro = new Livro();
-			// livro.setIdLivro(idLivro);
 			servico = new LivroServico();
 			servico.excluir(livro);
 			MensagensJSF.adicionarMensagemSucesso("Livro Excluido com Sucesso!");
