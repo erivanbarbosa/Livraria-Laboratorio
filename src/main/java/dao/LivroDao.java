@@ -41,10 +41,11 @@ public class LivroDao {
 		
 		EntityManager entitymanager = FabricaConexaoHibernate.getEntityManager();
 		
-        Query query = entitymanager.createQuery("SELECT livro FROM Livro livro where livro.titulo like :nome");
-        query.setParameter("nome", "%" + titulo + "%");
+        Query query = entitymanager.createQuery("SELECT livro FROM Livro livro where upper(livro.titulo) like upper(:nome)");
+        query.setParameter("nome",  "%"+ titulo + "%");
         List<Livro> livros = query.getResultList();
         return livros;
+        /*like lower(concat('%', ?1,'%'))*/
     }
 
 	/*

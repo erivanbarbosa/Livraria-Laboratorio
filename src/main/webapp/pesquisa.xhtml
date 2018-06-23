@@ -14,7 +14,12 @@
 
 			<h:form>
 				<div class="ui-g" style="margin-bottom: 30px; height: 50px;">
-					<div class="ui-g-12 ui-md-6 ui-lg-6"></div>
+					<div class="ui-g-12 ui-md-6 ui-lg-6">
+					
+					<h:outputText value="Resultados para: "></h:outputText> 
+					<span style="font-weight:bold "> #{livroMB.titulo}</span>
+					
+					</div>
 
 					<div class="ui-g-12 ui-md-6 ui-lg-6 align-right" style="height: 100%;">
 						<p:button value="Cadastrar Livro" id="cadastrarLivroButton" style="height: 100%;" outcome="cadastrarLivro" rendered="#{usuarioMB.logado == true}"/>
@@ -51,7 +56,7 @@
 
 							</h:panelGrid>
 						</p:outputPanel>
-
+							
 						<p:outputPanel>
 							<h:outputText value="SINOPSE"
 								style="font-weight: bold; font-size:30px;" />
