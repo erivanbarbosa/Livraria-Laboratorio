@@ -14,10 +14,11 @@
 <h:body>
 	<ui:composition template="templates/principal.xhtml">
 		<ui:define name="conteudo">
+<p:messages id="msgErro" showDetail="true" closable="true" autoUpdate="true" />
 
 			<h:form>
 			
-					<h1 id="titulocadastrar">Cadastrar Livro</h1>
+					<h1 id="titulocadastrar" style="font-weight: bold; font-size:30px;">Cadastrar Livro</h1>
 					<table columns="1">
 						<h:panelGrid id="painel-excluir" columns="2">
 							<label>Título: </label>
@@ -33,7 +34,7 @@
              					   required="true"  requiredMessage="Campo preço deve ser preenchido."/>
              					
 								<label>Descrição: </label>
-								<p:inputTextarea value="#{livroMB.descricao}" id="descricao" rows="5" cols="100"
+								<p:inputTextarea value="#{livroMB.descricao}" id="descricao" rows="5" cols="100" maxlength="300"
              					   required="true"  requiredMessage="Campo descrição deve ser preenchido."/>
 								<label>Imagem: </label>
 								<p:inputText value="#{livroMB.imagem}" id="imagem" size="30"

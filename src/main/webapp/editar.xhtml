@@ -1,0 +1,54 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://java.sun.com/jsf/core">
+	<head>
+	<title>Cadastrar Livro</title>
+	</head>
+
+<h:body>
+	<ui:composition template="templates/principal.xhtml">
+		<ui:define name="conteudo">
+<p:messages id="msgErro" showDetail="true" closable="true" autoUpdate="true" />
+			<h:form>
+			
+					<h1 style="font-weight: bold; font-size:30px;">Editar Livro</h1>
+
+					<table columns="1">
+						<h:panelGrid id="painel-excluir" columns="2">
+							<label>Título: </label>
+								<p:inputText value="#{livroMB.livroEdicao.titulo}" id="titulo" size="30"
+             					   required="true"  requiredMessage="Campo titulo deve ser preenchido."/>
+             					   		
+             				<label>Autor: </label>
+             				<p:inputText value="#{livroMB.livroEdicao.autor}" id="autor" size="30"
+             					   required="true"  requiredMessage="Campo autor deve ser preenchido."/>
+             					   
+								<label>Preço: </label>
+								<p:inputText value="#{livroMB.livroEdicao.preco}" id="preco" size="30"
+             					   required="true"  requiredMessage="Campo preço deve ser preenchido."/>
+             					
+								<label>Descrição: </label>
+								<p:inputTextarea value="#{livroMB.livroEdicao.descricao}" id="descricao" rows="5" cols="100" maxlength="300"
+             					   required="true"  requiredMessage="Campo descrição deve ser preenchido."/>
+								<label>Imagem: </label>
+								<p:inputText value="#{livroMB.livroEdicao.imagem}" id="imagem" size="30" 
+             					   required="true"  requiredMessage="Campo imagem deve ser preenchido."/>
+								 <p:commandButton value="Editar Livro" id="cadastrar" actionListener="#{livroMB.editar()}" ajax="false" />
+									
+						</h:panelGrid>
+					</table>
+
+			</h:form>
+
+
+		</ui:define>
+	</ui:composition>
+
+</h:body>
+</html>

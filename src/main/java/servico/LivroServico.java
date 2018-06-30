@@ -28,8 +28,17 @@ public class LivroServico {
 	public List<Livro> pesquisar(String titulo) {
 		dao = new LivroDao();
 		return dao.pesquisar(titulo);
+	}
+	
+	public Livro pesquisarPeloId(int id ) {
+		dao = new LivroDao();
 		
-		
+		return dao.pesquisarPorId(id);
+	}
+
+	public void editar(Livro livro) {
+		dao = new LivroDao();
+		dao.editar(livro);
 	}
 
 }

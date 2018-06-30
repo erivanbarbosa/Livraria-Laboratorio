@@ -1,5 +1,6 @@
 package mbean;
 
+import java.io.IOException;
 import java.io.Serializable;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -7,6 +8,7 @@ import java.util.List;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import javax.faces.context.FacesContext;
 
 import modelo.Livro;
 import servico.LivroServico;
@@ -17,6 +19,7 @@ import util.MensagensJSF;
 public class LivroMB implements Serializable {
 
 	private Livro livro = new Livro();
+	private Livro livroEdicao = new Livro();
 	private String autor;
 	private double preco;
 	private String imagem;
@@ -36,19 +39,25 @@ public class LivroMB implements Serializable {
 
 	}
 
-	public void excluir() {
+	public void excluir(int id) {
 		try {
+			livro = new Livro();
+			livro.setIdLivro(id);
 			servico = new LivroServico();
 			servico.excluir(livro);
+			pesquisar();
+			FacesContext.getCurrentInstance().getExternalContext().redirect("pesquisa.xhtml");
 			MensagensJSF.adicionarMensagemSucesso("Livro Excluido com Sucesso!");
 		} catch (SQLException e) {
 			e.printStackTrace();
 			MensagensJSF.adicionarMensagemErro("Codigo do erro: " + e.getSQLState() + " \n" + e.getMessage());
+		} catch (IOException e) {
+			e.printStackTrace();
 		}
 		resetar();
 	}
 
-	public String inserir() {
+	public void inserir() {
 		livro = new Livro();
 		livro.setDescricao(getDescricao());
 		livro.setAutor(getAutor());
@@ -56,10 +65,36 @@ public class LivroMB implements Serializable {
 		livro.setPreco(getPreco());
 		livro.setTitulo(getTitulo());
 		servico = new LivroServico();
+		
+		try {
 		servico.inserir(livro);
+		MensagensJSF.adicionarMensagemSucesso("Livro Inserido com Sucesso!");
+		}catch (Exception e) {
+			MensagensJSF.adicionarMensagemErro("Erro ao inserir livro");
+		}
 		resetar();
-
-		return "cadastrado.xhtml";
+	}
+	
+	public void editar() {
+		servico = new LivroServico();
+		try {
+		servico.editar(livroEdicao);
+		MensagensJSF.adicionarMensagemSucesso("Livro Editado com Sucesso!");
+		}catch (Exception e) {
+			MensagensJSF.adicionarMensagemErro("Erro ao editar livro");
+		}
+		
+		resetar();
+	}
+	
+	public void abreEditar(int id ) {
+		servico = new LivroServico();
+		livroEdicao = servico.pesquisarPeloId(id);
+		try {
+			FacesContext.getCurrentInstance().getExternalContext().redirect("editar.xhtml");
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 
 	private void resetar() {
@@ -151,5 +186,15 @@ public class LivroMB implements Serializable {
 	public void setIdLivro(int idLivro) {
 		this.idLivro = idLivro;
 	}
+
+	public Livro getLivroEdicao() {
+		return livroEdicao;
+	}
+
+	public void setLivroEdicao(Livro livroEdicao) {
+		this.livroEdicao = livroEdicao;
+	}
+	
+	
 
 }

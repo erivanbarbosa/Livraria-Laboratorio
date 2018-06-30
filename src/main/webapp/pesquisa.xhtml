@@ -27,10 +27,8 @@
 				</div>
 				<p:dataScroller value="#{livroMB.livros}" var="livro" chunkSize="5">
 					<f:facet name="header">
-            Role para ver mais livros
+           <h:outputText value="#{livroMB.livros.size() > 0 ? 'Role para ver mais livros' : 'Nenhum resultado encontrado'}" />
         </f:facet>
-
-
 
 					<h:panelGrid columns="4"
 						columnClasses="imgLivro, details, sinopse, actions"
@@ -49,27 +47,24 @@
 									style="font-weight: bold; font-size:18px;" />
 
 
-								<h:outputText value="#{livro.preco}"
+								<h:outputText value="R$ #{livro.preco}"
 									style="font-weight: bold; font-size:30px;" />
-
-
-
 							</h:panelGrid>
 						</p:outputPanel>
 							
 						<p:outputPanel>
-							<h:outputText value="SINOPSE"
+							<h:outputText value="DESCRIÇÃO"
 								style="font-weight: bold; font-size:30px;" />
 
-							<p><h:outputText value="#{livro.descricao}" /></p>
+							<p style="margin-top: 0px;"><h:outputText value="#{livro.descricao}" /></p>
 						</p:outputPanel>
 
 						<p:outputPanel>
-							<h:panelGrid>
+							<h:panelGrid rendered="#{usuarioMB.logado == true}">
 								<p:commandButton id="iconOnly" icon="ui-icon-pencil"
-									title="Editar" style="margin-bottom: 10px;" />
+									title="Editar" style="margin-bottom: 10px;" action="#{livroMB.abreEditar(livro.idLivro)}"/>
 								<p:commandButton id="iconOnlys" icon="ui-icon-trash"
-									title="Excluir" />
+									title="Excluir" action="#{livroMB.excluir(livro.idLivro)}" />
 
 							</h:panelGrid>
 
@@ -81,9 +76,6 @@
 			</h:form>
 
 		</ui:define>
-
-
 	</ui:composition>
-
 </h:body>
 </html>
